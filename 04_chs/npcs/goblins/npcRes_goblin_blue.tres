@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://bgnpa76xlwhbc"]
+
+[ext_resource type="Script" uid="uid://or6oku1sr7en" path="res://04_chs/npcs/npc_resource.gd" id="1_ukal0"]
+[ext_resource type="Texture2D" uid="uid://dkchfvvc5whtc" path="res://04_chs/npcs/goblins/384_Goblin_Blue.png" id="2_ukal0"]
+
+[resource]
+script = ExtResource("1_ukal0")
+npc_name = "Caraffa"
+sprite = ExtResource("2_ukal0")
+metadata/_custom_type_script = "uid://or6oku1sr7en"

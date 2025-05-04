@@ -143,6 +143,7 @@ tile_size = Vector2i(48, 48)
 sources/0 = SubResource("TileSetAtlasSource_tsrsm")
 
 [node name="map_00_01" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_berxd")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

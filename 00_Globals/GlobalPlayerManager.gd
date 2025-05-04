@@ -1,6 +1,6 @@
 extends Node
 
-const PLAYER = preload("res://chs/ch_player.tscn")
+const PLAYER = preload("res://04_chs/player/ch_player.tscn")
 var player : Player
 var player_spawned : bool = false
 

@@ -1,10 +1,13 @@
 class_name State extends Node
 
-static var character : ch_base
+static var character : Player
+static var state_machine: PlayerStateMachine
 
 func _ready():
 	pass
-	
+#What happens when Initializing this State
+func Init() -> void:
+	pass	
 #What happens when Entering this State
 func Enter() -> void:
 	pass

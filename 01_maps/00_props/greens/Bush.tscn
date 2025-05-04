@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8t8n61sm0kij"]
+
+[ext_resource type="Script" uid="uid://baldy8e16gj5s" path="res://01_maps/00_props/greens/bush.gd" id="1_kulhe"]
+[ext_resource type="Texture2D" uid="uid://c8uovv2ltyx5k" path="res://01_maps/00_props/Fantasy_Outside_D_NoShadow.png" id="1_tgf0d"]
+[ext_resource type="PackedScene" uid="uid://dj2cq1vls5yxg" path="res://07_genNodes/Hitbox/hitbox.tscn" id="2_d5lb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kulhe"]
+size = Vector2(36, 18)
+
+[node name="Bush" type="Node2D"]
+script = ExtResource("1_kulhe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_tgf0d")
+hframes = 16
+vframes = 16
+frame = 122
+
+[node name="Hitbox" parent="." instance=ExtResource("2_d5lb8")]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_kulhe")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_kulhe")
+debug_color = Color(0.829571, 0, 0.183646, 0.42)

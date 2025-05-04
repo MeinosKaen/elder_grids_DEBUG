@@ -1,0 +1,79 @@
+class_name Player extends CharacterBody2D
+
+signal player_damaged(hurtbox:Hurtbox)
+
+var car_direction : Vector2 = Vector2.DOWN
+const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
+var direction : Vector2 = Vector2.ZERO
+
+var invulnerable : bool = false
+@onready var stats: Stats = $Stats
+
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var sprite2d : Sprite2D = $Sprite2D_Idle
+@onready var StateMachine : PlayerStateMachine = $StateMachine
+@onready var hitbox: Hitbox = $Interactions/Hitbox
+
+
+signal DirectionChanged(new_direction:Vector2)
+
+func _ready():
+	PlayerManager.player = self
+	StateMachine.Initialize(self)
+	hitbox.Damaged.connect(TakeDamage)
+	pass
+	
+func _process(delta):
+	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	pass
+
+func _physics_process(delta: float):
+	move_and_slide()
+
+func SetDirection() -> bool:
+	if direction == Vector2.ZERO:
+		return false
+	var direction_id : int = int(round((direction+car_direction*0.1).angle()/TAU*DIR_4.size()))
+	var new_direction = DIR_4[direction_id]
+	if new_direction == car_direction:
+		return false
+	car_direction = new_direction
+	DirectionChanged.emit(new_direction)
+	return true
+	
+func UpdatedAnimation(state : String) -> void:
+	animation_player.play(state + "_" + AnimDirection())
+	pass
+	
+func AnimDirection():
+	if car_direction == Vector2.DOWN:
+		return "down"
+	elif car_direction == Vector2.UP:
+		return "up"
+	elif car_direction == Vector2.LEFT:
+		return "left"
+	elif car_direction == Vector2.RIGHT:
+		return "right"
+
+func TakeDamage(hurtbox:Hurtbox) -> void:
+	if invulnerable:
+		return
+	UpdateHP(-hurtbox.damage)
+	if stats.current_hp <= 0:
+		stats.current_hp = 0
+		UpdateHP(50)
+		player_damaged.emit(hurtbox)
+	else:
+		player_damaged.emit(hurtbox)
+	pass
+func UpdateHP(delta:int) -> void:
+	stats.current_hp = clampi(stats.current_hp + delta, 0, stats.max_hp)
+	pass
+func MakeInvulnerable(_duration:float=1.0) -> void:
+	invulnerable = true
+	hitbox.monitoring = false
+	await get_tree().create_timer(_duration)
+	invulnerable = false
+	hitbox.monitoring = true
+	pass

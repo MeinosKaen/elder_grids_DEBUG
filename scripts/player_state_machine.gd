@@ -18,17 +18,20 @@ func _unhandled_input(event: InputEvent) -> void:
 	ChangeState(current_state.HandleInput(event))
 	pass
 
-func Initialize( _character : ch_base) -> void:
+func Initialize( _character : Player) -> void:
 	states = []
 	for c in get_children():
 		if c is State:
 			states.append(c)
-			print(str(c.name))
 	
-	if states.size() > 0:
-		states[0].character = _character
-		print(str(states[0].character.name))
-		ChangeState( states[0] )
+	if states.size() == 0:
+		return
+	
+	states[0].character = _character
+	states[0].state_machine = self
+	for state in states:
+		state.Init()
+	ChangeState( states[0] )
 
 func ChangeState( new_state : State) -> void:
 	if new_state == null || new_state == current_state:

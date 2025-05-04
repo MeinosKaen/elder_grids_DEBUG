@@ -1,6 +1,5 @@
 extends Button
 
-@onready var character_body = $"../.."
 @onready var state_machine = $"../../../../StateMachine"
 
 func _process(delta: float) -> void:
