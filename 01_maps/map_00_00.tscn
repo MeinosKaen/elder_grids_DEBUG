@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c7mahpwknbrt3"]
+[gd_scene load_steps=16 format=4 uid="uid://c7mahpwknbrt3"]
 
 [ext_resource type="Texture2D" uid="uid://d1vc5067qyq17" path="res://Fantasy_Outside_A5.png" id="1_22mom"]
 [ext_resource type="Script" uid="uid://bi41tp0kwemwc" path="res://01_maps/map_base.gd" id="1_2883h"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dy7ngee5ofthv" path="res://04_chs/npcs/npc.tscn" id="8_ddahl"]
 [ext_resource type="PackedScene" uid="uid://b2npjc7iw6m5k" path="res://04_chs/npcs/npc_behaviour_wander.tscn" id="9_bfel4"]
 [ext_resource type="Resource" uid="uid://bbyaqtypifbgi" path="res://04_chs/npcs/goblins/npcRes_goblin_yellow.tres" id="9_snrq5"]
+[ext_resource type="Resource" uid="uid://bgnpa76xlwhbc" path="res://04_chs/npcs/goblins/npcRes_goblin_blue.tres" id="11_nge64"]
+[ext_resource type="PackedScene" uid="uid://dqrr24beg0wwy" path="res://04_chs/npcs/npc_behaviour_patrol.tscn" id="12_3gen3"]
+[ext_resource type="PackedScene" uid="uid://dlea4yxrxu0hu" path="res://04_chs/npcs/patrol_location.tscn" id="13_7gm8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsrsm"]
 texture = ExtResource("1_22mom")
@@ -195,3 +198,40 @@ npc_resource = ExtResource("9_snrq5")
 
 [node name="NpcBehaviourWander" parent="NPC" instance=ExtResource("9_bfel4")]
 wander_range = 3
+
+[node name="NPC2" parent="." instance=ExtResource("8_ddahl")]
+position = Vector2(2112, 1824)
+npc_resource = ExtResource("11_nge64")
+
+[node name="NpcBehaviourPatrol" parent="NPC2" instance=ExtResource("12_3gen3")]
+process_mode = 0
+
+[node name="PatrolLocation" parent="NPC2/NpcBehaviourPatrol" instance=ExtResource("13_7gm8u")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(48, 96)
+wait_time = 0.0
+
+[node name="PatrolLocation2" parent="NPC2/NpcBehaviourPatrol" instance=ExtResource("13_7gm8u")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(192, 96)
+wait_time = 1.0
+
+[node name="PatrolLocation3" parent="NPC2/NpcBehaviourPatrol" instance=ExtResource("13_7gm8u")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(48, -96)
+wait_time = 1.0
+
+[node name="PatrolLocation4" parent="NPC2/NpcBehaviourPatrol" instance=ExtResource("13_7gm8u")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-144, 0)
+wait_time = 1.0
+
+[node name="PatrolLocation5" parent="NPC2/NpcBehaviourPatrol" instance=ExtResource("13_7gm8u")]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-144, 192)
+wait_time = 1.0
+
+[node name="PatrolLocation6" parent="NPC2/NpcBehaviourPatrol" instance=ExtResource("13_7gm8u")]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(96, 240)
+wait_time = 1.0

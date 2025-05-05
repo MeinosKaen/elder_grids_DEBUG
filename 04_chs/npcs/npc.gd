@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func UpdateAnimation() -> void:
-	print(state+"_"+direction_name)
+	#print(state+"_"+direction_name)
 	animation_player.play(state+"_"+direction_name)
 
 func UpdateDirection(target_position:Vector2) -> void:
@@ -34,8 +34,8 @@ func UpdateDirection(target_position:Vector2) -> void:
 
 func UpdateDirectionName() -> void:
 	var threshold : float = 0.45
-	print("Dir.X:"+str(direction.x))
-	print("Dir.Y:"+str(+direction.y))
+	#print("Dir.X:"+str(direction.x))
+	#print("Dir.Y:"+str(+direction.y))
 	if direction.y < -threshold:
 		direction_name = "up"
 	elif direction.y > threshold:
@@ -44,7 +44,7 @@ func UpdateDirectionName() -> void:
 		direction_name = "right"
 	elif direction.x < -threshold:
 		direction_name = "left"
-	print("New Direction Name is: "+direction_name)
+	#print("New Direction Name is: "+direction_name)
 		
 func SetupNPC() -> void:
 	if npc_resource:
