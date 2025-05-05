@@ -22,6 +22,7 @@ config/size/viewport_width=1152
 LevelManager="*res://00_Globals/GlobalLevelManager.gd"
 PlayerManager="*res://00_Globals/GlobalPlayerManager.gd"
 MapTransition="*res://06_GUI/transitions/map_transition.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -35,6 +36,10 @@ project/assembly_name="elder_grids"
 [editor]
 
 movie_writer/movie_file="C:/Users/meino/Videos/elder_grids.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 

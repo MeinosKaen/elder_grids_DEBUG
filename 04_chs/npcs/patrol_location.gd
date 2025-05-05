@@ -1,5 +1,5 @@
 @tool
-
+@icon("res://icons/03_Patrol.jpg")
 class_name PatrolLocation extends Node2D
 
 signal transform_changed
