@@ -1,0 +1,16 @@
+~ start
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- That motherfucker. => motherfucker
+#- End the conversation => END
+Nathan: For more information see the online documentation.
+
+~ motherfucker
+Nathan: That [wave]mother[/wave]fucking[wait=1] [shake]FUCKER!
+do dialogue_node.dialogue_finished()
+=> END

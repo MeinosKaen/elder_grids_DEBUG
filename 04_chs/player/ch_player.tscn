@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dey0s17ltu0m0"]
+[gd_scene load_steps=46 format=3 uid="uid://dey0s17ltu0m0"]
 
 [ext_resource type="Script" uid="uid://cxkqsxx3k73lw" path="res://04_chs/ch_base_body.gd" id="1_swf5f"]
 [ext_resource type="Script" uid="uid://6m1laamj5lii" path="res://04_chs/player/debug_button.gd" id="2_okaoq"]
@@ -507,6 +507,8 @@ radius = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pikll"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibe34"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytuny"]
 bg_color = Color(0.160784, 0.160784, 0.160784, 0.745098)
 
@@ -627,6 +629,16 @@ position = Vector2(0, 23)
 scale = Vector2(1.45, 1.45)
 shape = SubResource("CircleShape2D_pikll")
 debug_color = Color(0.854902, 0.741176, 0, 0.419608)
+
+[node name="world_interactor" type="Area2D" parent="Interactions"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/world_interactor"]
+position = Vector2(0, 5)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ibe34")
+debug_color = Color(0, 0.619608, 0.568627, 0.14902)
 
 [node name="playerHUD" type="CanvasLayer" parent="."]
 script = ExtResource("14_i50u7")

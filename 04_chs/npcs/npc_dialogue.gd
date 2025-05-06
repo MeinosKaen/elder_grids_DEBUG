@@ -1,0 +1,41 @@
+@icon("res://icons/04_Dialogue.jpg")
+class_name NPCDialogueCheck extends Area2D
+
+var npc : NPC
+var player_in_range : bool = false
+var dialogue_node = self
+
+# 1-Gotta feel when the Player gets in the area. 2-Gotta activate the variable that lets the input button work. 3-Gotta make the NPC pause and turn towards the player.
+# 4-Once the dialogue is finished, unpause the NPC. Done.
+func _ready() -> void:
+	var p = get_parent()
+	if p is NPC:
+		npc = p as NPC
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if player_in_range == false:
+		return
+	else:
+		if event.is_action_pressed("interact"):
+			npc.UpdateDirection(PlayerManager.player.global_position)
+			npc.state = "idle"
+			npc.velocity = Vector2.ZERO
+			npc.UpdateAnimation()
+			npc.do_behaviour = false
+			DialogueManager.show_dialogue_balloon(npc.dialogue_script,"start", [dialogue_node])
+		
+func dialogue_finished() -> void:
+	npc.state = "idle"
+	npc.UpdateAnimation()
+	npc.do_behaviour = true
+	npc.do_behaviour_enabled.emit()
+	pass
+
+func _on_area_entered(_a:Area2D) -> void:
+	print("Player is close enough.")
+	player_in_range = true
+func _on_area_exited(_a:Area2D) -> void:
+	player_in_range = false
+	print("Player has left.")

@@ -10,6 +10,7 @@ var direction_name : String = "down"
 var do_behaviour: bool = true
 
 @export var npc_resource : NPCResource : set = SetNPCResource
+@export var dialogue_script : DialogueResource
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
