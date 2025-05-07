@@ -29,6 +29,8 @@ func _process(delta):
 	pass
 
 func _physics_process(delta: float):
+	if not PlayerStats.player_context == "Exploration":
+		return
 	move_and_slide()
 
 func SetDirection() -> bool:
@@ -43,6 +45,8 @@ func SetDirection() -> bool:
 	return true
 	
 func UpdatedAnimation(state : String) -> void:
+	if not PlayerStats.player_context == "Exploration":
+		return
 	animation_player.play(state + "_" + AnimDirection())
 	pass
 	

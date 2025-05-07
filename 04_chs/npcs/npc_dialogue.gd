@@ -19,6 +19,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	else:
 		if event.is_action_pressed("interact"):
+			PlayerStats.player_context = "Dialogue"
 			npc.UpdateDirection(PlayerManager.player.global_position)
 			npc.state = "idle"
 			npc.velocity = Vector2.ZERO
@@ -31,6 +32,7 @@ func dialogue_finished() -> void:
 	npc.UpdateAnimation()
 	npc.do_behaviour = true
 	npc.do_behaviour_enabled.emit()
+	PlayerStats.player_context = "Exploration"
 	pass
 
 func _on_area_entered(_a:Area2D) -> void:
@@ -38,4 +40,4 @@ func _on_area_entered(_a:Area2D) -> void:
 	player_in_range = true
 func _on_area_exited(_a:Area2D) -> void:
 	player_in_range = false
-	print("Player has left.")
+	print("Player has left the area.")

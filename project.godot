@@ -23,6 +23,7 @@ LevelManager="*res://00_Globals/GlobalLevelManager.gd"
 PlayerManager="*res://00_Globals/GlobalPlayerManager.gd"
 MapTransition="*res://06_GUI/transitions/map_transition.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+PlayerStats="*res://00_Globals/GlobalPlayerStats.gd"
 
 [display]
 

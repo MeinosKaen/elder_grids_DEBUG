@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://bfxbsouyehpqo" path="res://scripts/state_stun.gd" id="13_ibe34"]
 [ext_resource type="Script" uid="uid://c5kscw3ffbwmq" path="res://04_chs/player/player_hud.gd" id="14_i50u7"]
 [ext_resource type="PackedScene" uid="uid://dj2cq1vls5yxg" path="res://07_genNodes/Hitbox/hitbox.tscn" id="14_pikll"]
-[ext_resource type="PackedScene" uid="uid://c0b2emprl2pdi" path="res://03_STATS/STATS.tscn" id="14_ytuny"]
+[ext_resource type="PackedScene" uid="uid://c0b2emprl2pdi" path="res://03_gameplay/STATS.tscn" id="14_ytuny"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5jf1"]
 radius = 9.0

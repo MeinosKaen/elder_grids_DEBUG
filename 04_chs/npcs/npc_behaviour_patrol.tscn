@@ -5,3 +5,5 @@
 [node name="NpcBehaviourPatrol" type="Node2D"]
 process_mode = 4
 script = ExtResource("1_p0ren")
+
+[node name="Timer" type="Timer" parent="."]
