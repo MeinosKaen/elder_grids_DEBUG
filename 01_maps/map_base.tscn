@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://dy80b4cnkehfj"]
 
 [ext_resource type="Texture2D" uid="uid://d1vc5067qyq17" path="res://Fantasy_Outside_A5.png" id="1_nibqr"]
-[ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://tilesets/LevelTilemapBase.gd" id="2_bnyv7"]
+[ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://01_maps/LevelTilemapBase.gd" id="2_bnyv7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsrsm"]
 texture = ExtResource("1_nibqr")

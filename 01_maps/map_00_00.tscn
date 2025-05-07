@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1vc5067qyq17" path="res://Fantasy_Outside_A5.png" id="1_22mom"]
 [ext_resource type="Script" uid="uid://bi41tp0kwemwc" path="res://01_maps/map_base.gd" id="1_2883h"]
-[ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://tilesets/LevelTilemapBase.gd" id="2_g8v37"]
+[ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://01_maps/LevelTilemapBase.gd" id="2_g8v37"]
 [ext_resource type="PackedScene" uid="uid://dtr22df8mlxdx" path="res://01_maps/debug_maps/player_spawn.tscn" id="3_8mm4j"]
 [ext_resource type="PackedScene" uid="uid://bxxix8f27d58x" path="res://01_maps/debug_maps/lvl_transition.tscn" id="5_kudcp"]
 [ext_resource type="PackedScene" uid="uid://b8t8n61sm0kij" path="res://01_maps/00_props/greens/Bush.tscn" id="6_ojvsa"]
