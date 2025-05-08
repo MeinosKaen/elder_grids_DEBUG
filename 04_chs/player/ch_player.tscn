@@ -551,7 +551,7 @@ libraries = {
 }
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 script = ExtResource("4_1tofp")
 
 [node name="DEBUG_LAYER" type="CanvasLayer" parent="."]
