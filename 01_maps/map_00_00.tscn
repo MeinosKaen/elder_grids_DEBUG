@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b7igr0ptd5th8" path="res://04_chs/enemies/slime/slime_enemy.tscn" id="7_nr34n"]
 [ext_resource type="PackedScene" uid="uid://dy7ngee5ofthv" path="res://04_chs/npcs/npc.tscn" id="8_ddahl"]
 [ext_resource type="Resource" uid="uid://bbyaqtypifbgi" path="res://04_chs/npcs/goblins/npcRes_goblin_yellow.tres" id="9_snrq5"]
+[ext_resource type="Resource" uid="uid://bc22fqhf1aafu" path="res://05_story/test_timeline.dtl" id="10_3gen3"]
 [ext_resource type="Resource" uid="uid://bgnpa76xlwhbc" path="res://04_chs/npcs/goblins/npcRes_goblin_blue.tres" id="11_nge64"]
 [ext_resource type="PackedScene" uid="uid://dqrr24beg0wwy" path="res://04_chs/npcs/npc_behaviour_patrol.tscn" id="12_3gen3"]
-[ext_resource type="Resource" uid="uid://b762vw5wm6ai5" path="res://05_story/test_dialogue.dialogue" id="12_7gm8u"]
 [ext_resource type="PackedScene" uid="uid://dlea4yxrxu0hu" path="res://04_chs/npcs/patrol_location.tscn" id="13_7gm8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsrsm"]
@@ -195,12 +195,12 @@ position = Vector2(2496, 2016)
 [node name="NPC" parent="." instance=ExtResource("8_ddahl")]
 position = Vector2(3024, 1488)
 npc_resource = ExtResource("9_snrq5")
-dialogue_script = ExtResource("12_7gm8u")
+dialogue_script = ExtResource("10_3gen3")
 
 [node name="NPC2" parent="." instance=ExtResource("8_ddahl")]
 position = Vector2(2112, 1824)
 npc_resource = ExtResource("11_nge64")
-dialogue_script = ExtResource("12_7gm8u")
+dialogue_script = ExtResource("10_3gen3")
 
 [node name="NpcBehaviourPatrol" parent="NPC2" instance=ExtResource("12_3gen3")]
 process_mode = 0

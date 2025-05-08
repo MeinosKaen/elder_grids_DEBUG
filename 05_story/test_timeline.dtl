@@ -40,4 +40,5 @@ label growth_result
 checkie: Your Vigor is {PlayerStats.vigor}.[pause=0.3] Your Arcane is {PlayerStats.arcane}.[pause=0.3] Your Vitality is {PlayerStats.vitality}.[pause=0.3] Your Alacrity is {PlayerStats.alacrity}.[pause=0.3] Your Fortune is {PlayerStats.fortune}.
 
 label end_test
+do PlayerStats.dialogue_is_finished()
 [end_timeline]

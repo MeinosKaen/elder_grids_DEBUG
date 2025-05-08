@@ -13,21 +13,24 @@ func _ready() -> void:
 		npc = p as NPC
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
+	PlayerStats.DialogueFinished.connect(dialogue_finished)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if player_in_range == false:
 		return
 	else:
 		if event.is_action_pressed("interact"):
-			PlayerStats.player_context = "Dialogue"
-			npc.UpdateDirection(PlayerManager.player.global_position)
-			npc.state = "idle"
-			npc.velocity = Vector2.ZERO
-			npc.UpdateAnimation()
-			npc.do_behaviour = false
-			DialogueManager.show_dialogue_balloon(npc.dialogue_script,"start", [dialogue_node])
+			if PlayerStats.player_context != "Dialogue":
+				PlayerStats.player_context = "Dialogue"
+				npc.UpdateDirection(PlayerManager.player.global_position)
+				npc.state = "idle"
+				npc.velocity = Vector2.ZERO
+				npc.UpdateAnimation()
+				npc.do_behaviour = false
+				Dialogic.start("res://05_story/test_timeline.dtl")
 		
 func dialogue_finished() -> void:
+	Dialogic.end_timeline()
 	npc.state = "idle"
 	npc.UpdateAnimation()
 	npc.do_behaviour = true

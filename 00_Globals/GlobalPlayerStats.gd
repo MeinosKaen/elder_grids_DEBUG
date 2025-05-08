@@ -1,5 +1,5 @@
 class_name GlobalPlayerStats extends Node
-
+signal DialogueFinished
 # Basic Info
 var first_name : String = "Nanni"
 var last_name : String = "Nella"
@@ -115,3 +115,6 @@ func lvl_up_unique_topic(topic):
 	var lvling_topic = null
 	lvling_topic = unique_topics.find(topic)
 	lvling_topic.level +=1
+
+func dialogue_is_finished():
+	DialogueFinished.emit()
