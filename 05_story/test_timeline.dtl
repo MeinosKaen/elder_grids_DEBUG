@@ -1,0 +1,43 @@
+checkie: Hello, I'm Checkie the Checker![pause=0.3] I will be checking your stats today!
+label choices (Choices)
+- Basic Info
+	jump basic_info
+- Choose Growth Type
+	jump growth_type
+label basic_info (Basic Info)
+checkie: Your name is {PlayerStats.first_name} {PlayerStats.last_name}.[pause=0.5] Your background is that of a {PlayerStats.background}.
+jump end_test
+
+label growth_type
+checkie: What Growth Type would you like?
+- Brawler Type
+	set {PlayerStats.brawler_type} += 5
+	do PlayerStats.starter_attributes()
+	jump growth_result
+- Ranged Type
+	set {PlayerStats.ranged_type} += 5
+	do PlayerStats.starter_attributes()
+	jump growth_result
+- Magician Type
+	set {PlayerStats.magician_type} += 5
+	do PlayerStats.starter_attributes()
+	jump growth_result
+- Tank Type
+	set {PlayerStats.tank_type} += 5
+	do PlayerStats.starter_attributes()
+	jump growth_result
+- Gambler Type
+	set {PlayerStats.gambler_type} += 5
+	do PlayerStats.starter_attributes()
+	jump growth_result
+- Balanced Type
+	set {PlayerStats.balanced_type} += 5
+	do PlayerStats.starter_attributes()
+	jump growth_result
+
+
+label growth_result
+checkie: Your Vigor is {PlayerStats.vigor}.[pause=0.3] Your Arcane is {PlayerStats.arcane}.[pause=0.3] Your Vitality is {PlayerStats.vitality}.[pause=0.3] Your Alacrity is {PlayerStats.alacrity}.[pause=0.3] Your Fortune is {PlayerStats.fortune}.
+
+label end_test
+[end_timeline]
