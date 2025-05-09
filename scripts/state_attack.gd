@@ -7,7 +7,6 @@ var attacking : bool = false
 @onready var animation_player : AnimationPlayer = $"../../AnimationPlayer"
 @onready var audio_player : AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var hurtbox: Hurtbox = $"../../Interactions/Hurtbox"
-@onready var stats: Stats = $"../../Stats"
 @onready var player_hud: CanvasLayer = $"../../playerHUD"
 
 @export var attack_sound : AudioStream
@@ -22,7 +21,7 @@ func Enter() -> void:
 	audio_player.play()
 	attacking = true
 	await get_tree().create_timer(0.075)
-	stats.current_stm -= 5
+	PlayerStats.current_stm -= 8
 	player_hud.UpdateStatsHUD()
 	hurtbox.monitoring = true
 	pass

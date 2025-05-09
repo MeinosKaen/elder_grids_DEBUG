@@ -1,7 +1,7 @@
 @icon("res://icons/04_Dialogue.jpg")
 class_name NPCDialogueCheck extends Area2D
 
-var npc : NPC
+var npc : Node
 var player_in_range : bool = false
 var dialogue_node = self
 
@@ -9,8 +9,7 @@ var dialogue_node = self
 # 4-Once the dialogue is finished, unpause the NPC. Done.
 func _ready() -> void:
 	var p = get_parent()
-	if p is NPC:
-		npc = p as NPC
+	npc = p
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 	PlayerStats.DialogueFinished.connect(dialogue_finished)
@@ -27,7 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				npc.velocity = Vector2.ZERO
 				npc.UpdateAnimation()
 				npc.do_behaviour = false
-				Dialogic.start("res://05_story/test_timeline.dtl")
+				Dialogic.start(npc.dialogue_script)
 		
 func dialogue_finished() -> void:
 	Dialogic.end_timeline()
@@ -36,6 +35,9 @@ func dialogue_finished() -> void:
 	npc.do_behaviour = true
 	npc.do_behaviour_enabled.emit()
 	PlayerStats.player_context = "Exploration"
+	if npc.fixed_position != "None":
+		npc.direction_name = npc.fixed_position
+		npc.UpdateAnimation()
 	pass
 
 func _on_area_entered(_a:Area2D) -> void:

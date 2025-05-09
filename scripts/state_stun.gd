@@ -10,7 +10,6 @@ var direction : Vector2
 var next_state : State = null
 
 @onready var idle_state : State = $"../Idle"
-@onready var stats: Stats = $"../../Stats"
 
 #What happens when Initializing this State
 func Init() -> void:

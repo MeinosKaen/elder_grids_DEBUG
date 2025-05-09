@@ -19,10 +19,12 @@ var arcane : int = 3
 var vitality : int = 3
 var alacrity : int = 3
 var fortune : int = 3
-var max_hp : int = 1
-var max_mp : int = 1
-var current_hp : int = 1
-var current_mp : int = 1
+var max_hp : int = 100
+var max_mp : int = 100
+var max_stm : int = 100
+var current_hp : int = 100
+var current_mp : int = 100
+var current_stm : int = 100
 
 # Topics
 ## General Topics

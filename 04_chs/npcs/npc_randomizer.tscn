@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dy7ngee5ofthv"]
+[gd_scene load_steps=16 format=3 uid="uid://wq6rdykglfka"]
 
-[ext_resource type="Script" uid="uid://4x7r5a2i5650" path="res://04_chs/npcs/npc.gd" id="1_21up0"]
-[ext_resource type="Texture2D" uid="uid://dkchfvvc5whtc" path="res://04_chs/npcs/goblins/384_Goblin_Blue.png" id="2_me88f"]
-[ext_resource type="Script" uid="uid://dc0eoae8hgfr3" path="res://04_chs/npcs/npc_dialogue.gd" id="4_kklgy"]
+[ext_resource type="Script" uid="uid://cjkje07vqs33i" path="res://04_chs/npcs/npc_randomizer.gd" id="1_s415n"]
+[ext_resource type="Texture2D" uid="uid://db5upjeibvxc8" path="res://04_chs/npcs/spritesheets/fbb_modern1/blonde_man.png" id="2_xax17"]
+[ext_resource type="Script" uid="uid://dc0eoae8hgfr3" path="res://04_chs/npcs/npc_dialogue.gd" id="3_j00xy"]
 
 [sub_resource type="Animation" id="Animation_kklgy"]
 length = 0.001
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_222a6"]
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_x1046"]
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [5]
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_5u78f"]
@@ -61,7 +61,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [9]
+"values": [7]
 }
 
 [sub_resource type="Animation" id="Animation_ixp6q"]
@@ -76,13 +76,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [13]
+"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_uoa7v"]
 resource_name = "walk_down"
-length = 1.2
-loop_mode = 1
+length = 0.6
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -90,16 +90,16 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_ovath"]
+[sub_resource type="Animation" id="Animation_xax17"]
 resource_name = "walk_left"
-length = 1.2
-loop_mode = 1
+length = 0.6
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -107,16 +107,16 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [4, 5, 6, 7]
+"values": [3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_swk5v"]
+[sub_resource type="Animation" id="Animation_1uhot"]
 resource_name = "walk_right"
-length = 1.2
-loop_mode = 1
+length = 0.6
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -124,16 +124,16 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [8, 9, 10, 11]
+"values": [6, 7, 8]
 }
 
-[sub_resource type="Animation" id="Animation_aqdll"]
+[sub_resource type="Animation" id="Animation_xblea"]
 resource_name = "walk_up"
-length = 1.2
-loop_mode = 1
+length = 0.6
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -141,10 +141,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [12, 13, 14, 15]
+"values": [9, 10, 11]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kklgy"]
@@ -155,9 +155,9 @@ _data = {
 &"idle_right": SubResource("Animation_5u78f"),
 &"idle_up": SubResource("Animation_ixp6q"),
 &"walk_down": SubResource("Animation_uoa7v"),
-&"walk_left": SubResource("Animation_ovath"),
-&"walk_right": SubResource("Animation_swk5v"),
-&"walk_up": SubResource("Animation_aqdll")
+&"walk_left": SubResource("Animation_xax17"),
+&"walk_right": SubResource("Animation_1uhot"),
+&"walk_up": SubResource("Animation_xblea")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21up0"]
@@ -169,13 +169,14 @@ collision_layer = 4096
 collision_mask = 261
 motion_mode = 1
 wall_min_slide_angle = 0.174533
-script = ExtResource("1_21up0")
+script = ExtResource("1_s415n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(48, 48)
-texture = ExtResource("2_me88f")
-hframes = 4
-vframes = 5
+position = Vector2(26, 36)
+texture = ExtResource("2_xax17")
+hframes = 3
+vframes = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -183,8 +184,8 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48, 78)
-scale = Vector2(0.8, 0.9)
+position = Vector2(25, 52)
+scale = Vector2(1.1, 0.8)
 shape = SubResource("CapsuleShape2D_21up0")
 debug_color = Color(0, 0.6, 0.701961, 0.231373)
 
@@ -192,10 +193,10 @@ debug_color = Color(0, 0.6, 0.701961, 0.231373)
 collision_layer = 0
 collision_mask = 32
 monitorable = false
-script = ExtResource("4_kklgy")
+script = ExtResource("3_j00xy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue_check"]
-position = Vector2(48, 60)
-scale = Vector2(5, 5)
+position = Vector2(25, 43)
+scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_222a6")
 debug_color = Color(0.157717, 0.609158, 0.43235, 0.054902)
