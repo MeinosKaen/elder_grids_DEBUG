@@ -10,8 +10,8 @@ var direction_name : String = "down"
 var do_behaviour: bool = true
 
 @export var npc_resource : NPCResource : set = SetNPCResource
-@export var dialogue_script : DialogicTimeline
-@export_enum("Children", "Future1", "Future2", "Future3", "Modern1", "Modern2") var npc_group : String = "None"
+@export var dialogue_script : DialogicTimeline = null
+@export_enum("Children", "Trad1_men", "Trad1_women", "Trad2_men", "Trad2_women", "Modern1", "Modern2") var npc_group : String = "None"
 @export_enum("up", "left", "right", "down", "None") var fixed_position : String = "None"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -52,12 +52,19 @@ func UpdateDirectionName() -> void:
 		
 func SetupNPC() -> void:
 	#if npc_resource:
+	#elif npc_group == "Children":
+	#	sprite_pool = []
+	var sprite_pool : Array
 	if npc_group == "Modern1":
-		var sprite_pool : Array = ["res://04_chs/npcs/spritesheets/fbb_modern1/biz_man.png", "res://04_chs/npcs/spritesheets/fbb_modern1/black_man.png", "res://04_chs/npcs/spritesheets/fbb_modern1/blue_woman.png", "res://04_chs/npcs/spritesheets/fbb_modern1/cow_boy.png", "res://04_chs/npcs/spritesheets/fbb_modern1/dreads_girl.png", "res://04_chs/npcs/spritesheets/fbb_modern1/fbb_modern1.png", "res://04_chs/npcs/spritesheets/fbb_modern1/glasses_man.png", "res://04_chs/npcs/spritesheets/fbb_modern1/muscle_man.png"]
-		var sprite_index = randi_range(0,7)
-		var new_sprite = load(sprite_pool[sprite_index])
-		print(new_sprite)
-		sprite.texture = new_sprite
+		sprite_pool = ["res://04_chs/npcs/spritesheets/fbb_modern1/biz_man.png", "res://04_chs/npcs/spritesheets/fbb_modern1/black_man.png", "res://04_chs/npcs/spritesheets/fbb_modern1/blonde_man.png", "res://04_chs/npcs/spritesheets/fbb_modern1/blue_woman.png", "res://04_chs/npcs/spritesheets/fbb_modern1/cow_boy.png", "res://04_chs/npcs/spritesheets/fbb_modern1/dreads_girl.png", "res://04_chs/npcs/spritesheets/fbb_modern1/glasses_man.png", "res://04_chs/npcs/spritesheets/fbb_modern1/muscle_man.png"]
+	elif npc_group == "Children":
+		sprite_pool = ["res://04_chs/npcs/spritesheets/fbb_children/blonde_child.png", "res://04_chs/npcs/spritesheets/fbb_children/blue_child.png", "res://04_chs/npcs/spritesheets/fbb_children/bowl_child.png", "res://04_chs/npcs/spritesheets/fbb_children/brunette_child.png", "res://04_chs/npcs/spritesheets/fbb_children/cobalt_child.png", "res://04_chs/npcs/spritesheets/fbb_children/ginger_child.png", "res://04_chs/npcs/spritesheets/fbb_children/green_child.png", "res://04_chs/npcs/spritesheets/fbb_children/red_child.png"]
+	elif npc_group == "Trad1_men":
+		sprite_pool = ["res://04_chs/npcs/spritesheets/ffb_trad1/farmer_man.png", "res://04_chs/npcs/spritesheets/ffb_trad1/gnsweater_body.png", "res://04_chs/npcs/spritesheets/ffb_trad1/headband_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/ljacket_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/moustache_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/rjacket_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/slickback_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/suspenders_guy.png"]
+	var sprite_index = randi_range(0,7)
+	var new_sprite = load(sprite_pool[sprite_index])
+	print(new_sprite)
+	sprite.texture = new_sprite
 	if fixed_position != "None":
 		direction_name = fixed_position
 		UpdateAnimation()

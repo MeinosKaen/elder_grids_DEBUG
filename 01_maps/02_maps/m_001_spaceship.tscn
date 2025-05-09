@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dplhrw4saj40g"]
+[gd_scene load_steps=13 format=4 uid="uid://dplhrw4saj40g"]
 
 [ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://01_maps/LevelTilemapBase.gd" id="1_nvvo7"]
 [ext_resource type="Script" uid="uid://bi41tp0kwemwc" path="res://01_maps/map_base.gd" id="1_v8yeq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d27go364a4urp" path="res://08_CGs/textures/texture_GLASS.png" id="7_2p3sb"]
 [ext_resource type="PackedScene" uid="uid://wq6rdykglfka" path="res://04_chs/npcs/npc_randomizer.tscn" id="10_0j7eo"]
 [ext_resource type="Resource" uid="uid://bc22fqhf1aafu" path="res://05_story/test_timeline.dtl" id="11_jcsqw"]
+[ext_resource type="PackedScene" uid="uid://eqrou1gwsj47" path="res://04_chs/npcs/npc_unique.tscn" id="12_0yt0u"]
 
 [node name="m001_spaceship" type="Node2D"]
 y_sort_enabled = true
@@ -64,6 +65,14 @@ z_index = -1
 tile_map_data = PackedByteArray("AAAWAPj/CQAAACMAAAAXAPj/CQABACMAAAAYAPj/CQAEACMAAAAZAPj/CQAFACMAAAAWAPb/CQAAAB4AAAAXAPb/CQABAB4AAAAYAPb/CQAEAB4AAAAZAPb/CQAFAB4AAAAWAPf/CQAAACAAAAAXAPf/CQABACAAAAAYAPf/CQAEACAAAAAZAPf/CQAFACAAAAA=")
 tile_set = ExtResource("3_8ntpf")
 
+[node name="PLACEHOLDERS" type="TileMapLayer" parent="map_layers"]
+tile_map_data = PackedByteArray("AAASACIABwAFAAwAAAATACIABwAFAAwAAAAUACIABwAFAAwAAAADAAQABwAFAAwAAAAEAAQABwAFAAwAAAAFAAQABwAFAAwAAAANAB8ABwAFAAwAAAAOAB8ABwAFAAwAAAAPAB8ABwAFAAwAAAASAB8ABwAFAAwAAAATAB8ABwAFAAwAAAAUAB8ABwAFAAwAAAADABYABwAFAAwAAAAEABYABwAFAAwAAAAFABYABwAFAAwAAAANABMABwAFAAwAAAAOABMABwAFAAwAAAAPABMABwAFAAwAAAASAAEABwAFAAwAAAATAAEABwAFAAwAAAAUAAEABwAFAAwAAAASAAQABwAFAAwAAAATAAQABwAFAAwAAAAUAAQABwAFAAwAAAANAAoABwAFAAwAAAAOAAoABwAFAAwAAAAPAAoABwAFAAwAAAAIAA0ABwAFAAwAAAAJAA0ABwAFAAwAAAAKAA0ABwAFAAwAAAA=")
+tile_set = ExtResource("2_y06t2")
+
+[node name="EMPTY_SEATS" type="TileMapLayer" parent="map_layers"]
+tile_map_data = PackedByteArray("AAATABYABwAFAAsAAAAUABYABwAFAAsAAAADABAABwAFAAsAAAAEABAABwAFAAsAAAAEABwABwAFAAsAAAAKABkABwAFAAsAAAAJAB8ABwAFAAsAAAAJABAABwAFAAsAAAAEAAcABwAFAAsAAAADAAcABwAFAAsAAAAKAAEABwAFAAsAAAAJAAcABwAFAAsAAAAUAAoABwAFAAsAAAATAAoABwAFAAsAAAATAAcABwAFAAsAAAADABMABwAFAAsAAAA=")
+tile_set = ExtResource("2_y06t2")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
 collision_layer = 4
@@ -104,24 +113,181 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("7_2p3sb")
 
-[node name="Parallax2D2" type="Parallax2D" parent="canvas_effects"]
-modulate = Color(1, 1, 1, 0.196078)
-z_index = -3
-y_sort_enabled = true
-scale = Vector2(1.25, 1.25)
-repeat_size = Vector2(816, 816)
-autoscroll = Vector2(2.5, 4.5)
-repeat_times = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="canvas_effects/Parallax2D2"]
-position = Vector2(408, 408)
-texture = ExtResource("6_v8yeq")
-
 [node name="NPCS" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="NPC" parent="NPCS" instance=ExtResource("10_0j7eo")]
+[node name="modern_npc" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(384, 1704)
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
+
+[node name="modern_npc2" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(144, 1560)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="trad1_npc" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(192, 1560)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Trad1_men"
+fixed_position = "up"
+
+[node name="modern_npc3" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(240, 1560)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc4" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(384, 1560)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc5" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(672, 1416)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc6" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(960, 1416)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc7" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(432, 1128)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc8" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(192, 1272)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc9" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(672, 840)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc10" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(864, 840)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc11" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(912, 696)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc12" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(720, 696)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc13" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(240, 696)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc14" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(240, 120)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="modern_npc15" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(672, 408)
+dialogue_script = ExtResource("11_jcsqw")
+npc_group = "Modern1"
+fixed_position = "up"
+
+[node name="child_npc" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(432, 1704)
+npc_group = "Children"
+fixed_position = "up"
+
+[node name="child_npc2" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(768, 1224)
+npc_group = "Children"
+fixed_position = "down"
+
+[node name="child_npc3" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(816, 1272)
+npc_group = "Children"
+fixed_position = "left"
+
+[node name="child_npc4" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(144, 792)
+npc_group = "Children"
+fixed_position = "left"
+
+[node name="child_npc5" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(144, 816)
+npc_group = "Children"
+fixed_position = "left"
+
+[node name="child_npc6" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(240, 552)
+npc_group = "Children"
+fixed_position = "right"
+
+[node name="child_npc7" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(384, 552)
+npc_group = "Children"
+fixed_position = "left"
+
+[node name="child_npc8" parent="NPCS" instance=ExtResource("10_0j7eo")]
+y_sort_enabled = true
+position = Vector2(720, 264)
+npc_group = "Children"
+fixed_position = "down"
+
+[node name="NPC_unique" parent="NPCS" instance=ExtResource("12_0yt0u")]
+position = Vector2(624, 1704)
+fixed_position = "up"
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+modulate = Color(1, 1, 1, 0.196078)
+z_index = 3
+y_sort_enabled = true
+repeat_size = Vector2(816, 816)
+autoscroll = Vector2(2.5, 4.5)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(408, 408)
+texture = ExtResource("6_v8yeq")

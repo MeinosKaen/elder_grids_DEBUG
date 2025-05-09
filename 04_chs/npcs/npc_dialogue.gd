@@ -15,19 +15,20 @@ func _ready() -> void:
 	PlayerStats.DialogueFinished.connect(dialogue_finished)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if player_in_range == false:
+	if player_in_range == false or npc.dialogue_script == null:
 		return
-	else:
-		if event.is_action_pressed("interact"):
-			if PlayerStats.player_context != "Dialogue":
-				PlayerStats.player_context = "Dialogue"
-				npc.UpdateDirection(PlayerManager.player.global_position)
-				npc.state = "idle"
-				npc.velocity = Vector2.ZERO
-				npc.UpdateAnimation()
-				npc.do_behaviour = false
-				Dialogic.start(npc.dialogue_script)
-		
+	if PlayerManager.last_npc_touched != self:
+		return
+	if event.is_action_pressed("interact"):
+		if PlayerStats.player_context != "Dialogue":
+			PlayerStats.player_context = "Dialogue"
+			npc.UpdateDirection(PlayerManager.player.global_position)
+			npc.state = "idle"
+			npc.velocity = Vector2.ZERO
+			npc.UpdateAnimation()
+			npc.do_behaviour = false
+			Dialogic.start(npc.dialogue_script)
+			
 func dialogue_finished() -> void:
 	Dialogic.end_timeline()
 	npc.state = "idle"
@@ -42,7 +43,9 @@ func dialogue_finished() -> void:
 
 func _on_area_entered(_a:Area2D) -> void:
 	print("Player is close enough.")
+	PlayerManager.last_npc_touched = self
 	player_in_range = true
 func _on_area_exited(_a:Area2D) -> void:
 	player_in_range = false
+	PlayerManager.last_npc_touched = null
 	print("Player has left the area.")

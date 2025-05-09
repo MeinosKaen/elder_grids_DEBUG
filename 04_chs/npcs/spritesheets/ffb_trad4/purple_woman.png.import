@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sgmo54saq7st"
-path="res://.godot/imported/fbb_modern2.png-9b8192f7bee1f83bad69411fb52debd0.ctex"
+uid="uid://bghwe1qsjwq4o"
+path="res://.godot/imported/purple_woman.png-946805bf90e222f3186950dd2860c066.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://04_chs/npcs/spritesheets/fbb_modern2.png"
-dest_files=["res://.godot/imported/fbb_modern2.png-9b8192f7bee1f83bad69411fb52debd0.ctex"]
+source_file="res://04_chs/npcs/spritesheets/ffb_trad4/purple_woman.png"
+dest_files=["res://.godot/imported/purple_woman.png-946805bf90e222f3186950dd2860c066.ctex"]
 
 [params]
 

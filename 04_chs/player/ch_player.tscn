@@ -500,7 +500,7 @@ radius = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pikll"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ibe34"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pikll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytuny"]
 bg_color = Color(0.160784, 0.160784, 0.160784, 0.745098)
@@ -584,7 +584,7 @@ script = ExtResource("6_u5vic")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("7_c8rlx")
-move_speed = 230.0
+move_speed = 150.0
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("9_3e4bd")
@@ -630,8 +630,8 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/world_interactor"]
 position = Vector2(1, 5)
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_ibe34")
+scale = Vector2(1.95, 1.95)
+shape = SubResource("CapsuleShape2D_pikll")
 debug_color = Color(0, 0.690196, 0.443137, 0.0196078)
 
 [node name="playerHUD" type="CanvasLayer" parent="."]

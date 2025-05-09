@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://wq6rdykglfka"]
+[gd_scene load_steps=16 format=3 uid="uid://eqrou1gwsj47"]
 
-[ext_resource type="Script" uid="uid://cjkje07vqs33i" path="res://04_chs/npcs/npc_randomizer.gd" id="1_s415n"]
-[ext_resource type="Texture2D" uid="uid://db5upjeibvxc8" path="res://04_chs/npcs/spritesheets/fbb_modern1/blonde_man.png" id="2_xax17"]
-[ext_resource type="Script" uid="uid://dc0eoae8hgfr3" path="res://04_chs/npcs/npc_dialogue.gd" id="3_j00xy"]
+[ext_resource type="Script" uid="uid://b3myqo1wq84i6" path="res://04_chs/npcs/npc_unique.gd" id="1_3p547"]
+[ext_resource type="Texture2D" uid="uid://db5upjeibvxc8" path="res://04_chs/npcs/spritesheets/fbb_modern1/blonde_man.png" id="2_w4nrj"]
+[ext_resource type="Script" uid="uid://dc0eoae8hgfr3" path="res://04_chs/npcs/npc_dialogue.gd" id="3_hu6nm"]
 
 [sub_resource type="Animation" id="Animation_kklgy"]
 length = 0.001
@@ -164,16 +164,16 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xax17"]
 
-[node name="NPC" type="CharacterBody2D"]
+[node name="NPC_unique" type="CharacterBody2D"]
 collision_layer = 4096
 collision_mask = 261
 motion_mode = 1
 wall_min_slide_angle = 0.174533
-script = ExtResource("1_s415n")
+script = ExtResource("1_3p547")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(26, 36)
-texture = ExtResource("2_xax17")
+texture = ExtResource("2_w4nrj")
 hframes = 3
 vframes = 4
 frame = 1
@@ -193,7 +193,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.231373)
 collision_layer = 0
 collision_mask = 32
 monitorable = false
-script = ExtResource("3_j00xy")
+script = ExtResource("3_hu6nm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue_check"]
 position = Vector2(25, 43)
