@@ -20,6 +20,9 @@ extends CanvasLayer
 @onready var money_value: RichTextLabel = $MONEY_TIME/money_box/money_value
 @onready var time_value: RichTextLabel = $MONEY_TIME/time_box/time_value
 
+var submenu_up : bool = false
+var current_submenu : String = "None"
+@onready var topics_sub: Control = $Topics_Sub
 
 
 func _ready() -> void:
@@ -74,3 +77,31 @@ func refresh_values() -> void:
 		s = str(PlayerManager.game_time_seconds)
 	time_value.text = h + ":" + m + ":" + s
 	
+
+
+func _on_topics_button_button_up() -> void:
+	if current_submenu == "Topics":
+		topics_sub.visible = false
+		topics_sub.process_mode = Node.PROCESS_MODE_DISABLED
+		current_submenu = "None"
+		return
+	if current_submenu != "None":
+		return
+	else:
+		current_submenu = "Topics"
+		topics_sub.process_mode = Node.PROCESS_MODE_INHERIT
+		topics_sub.visible = true
+
+
+func _on_close_button_pressed() -> void:
+	if current_submenu != "None":
+		return
+	PlayerStats.player_context = "Exploration"
+	get_tree().paused = false
+	self.queue_free()
+
+
+func _on_exit_button_pressed() -> void:
+	if current_submenu != "None":
+		return
+	get_tree().quit()

@@ -1,6 +1,27 @@
-[gd_resource type="Theme" format=3 uid="uid://bvekati27w6s1"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bvekati27w6s1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsvf8"]
+bg_color = Color(0.98, 0.79968, 0.5292, 0.254902)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwur6"]
+bg_color = Color(0.03, 0.03, 0.03, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [resource]
+Button/font_sizes/font_size = 28
+Button/styles/hover = SubResource("StyleBoxFlat_wsvf8")
+Button/styles/normal = SubResource("StyleBoxFlat_iwur6")
 RichTextLabel/font_sizes/bold_font_size = 34
 RichTextLabel/font_sizes/bold_italics_font_size = 34
 RichTextLabel/font_sizes/italics_font_size = 30
