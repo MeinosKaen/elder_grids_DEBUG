@@ -22,9 +22,9 @@ var fortune : int = 3
 var max_hp : int = 100
 var max_mp : int = 100
 var max_stm : int = 100
-var current_hp : int = 100
-var current_mp : int = 100
-var current_stm : int = 100
+var current_hp : int = 70
+var current_mp : int = 30
+var current_stm : int = 15
 
 # Topics
 ## General Topics

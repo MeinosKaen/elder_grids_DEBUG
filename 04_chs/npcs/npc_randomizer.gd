@@ -63,7 +63,6 @@ func SetupNPC() -> void:
 		sprite_pool = ["res://04_chs/npcs/spritesheets/ffb_trad1/farmer_man.png", "res://04_chs/npcs/spritesheets/ffb_trad1/gnsweater_body.png", "res://04_chs/npcs/spritesheets/ffb_trad1/headband_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/ljacket_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/moustache_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/rjacket_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/slickback_guy.png", "res://04_chs/npcs/spritesheets/ffb_trad1/suspenders_guy.png"]
 	var sprite_index = randi_range(0,7)
 	var new_sprite = load(sprite_pool[sprite_index])
-	print(new_sprite)
 	sprite.texture = new_sprite
 	if fixed_position != "None":
 		direction_name = fixed_position

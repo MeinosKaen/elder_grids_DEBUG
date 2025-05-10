@@ -36,6 +36,14 @@ func _physics_process(delta: float):
 		return
 	move_and_slide()
 
+func _input(event: InputEvent) -> void:
+	if PlayerStats.player_context == "Exploration":
+		if event.is_action_pressed("menu"):
+			PlayerStats.player_context = "Main Menu"
+			var current_scene = self.get_parent()
+			var main_menu = PlayerManager.MAINMENU.instantiate()
+			current_scene.add_child(main_menu)
+
 func SetDirection() -> bool:
 	if direction == Vector2.ZERO:
 		return false

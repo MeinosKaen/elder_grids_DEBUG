@@ -1,0 +1,300 @@
+[gd_scene load_steps=10 format=3 uid="uid://fl2h1bs3saub"]
+
+[ext_resource type="Texture2D" uid="uid://fj3i8wo8odmy" path="res://08_CGs/textures/texture_BLUMOTES.jpg" id="1_4gsl1"]
+[ext_resource type="Script" uid="uid://8hsltlvquny8" path="res://06_GUI/menus/main_menu.gd" id="1_ooy3y"]
+[ext_resource type="Theme" uid="uid://bvekati27w6s1" path="res://06_GUI/themes/menu_theme.tres" id="2_1p1rb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gsl1"]
+bg_color = Color(0, 0, 0, 0.490196)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p1rb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooy3y"]
+bg_color = Color(0.71, 0, 0.118334, 1)
+
+[sub_resource type="Theme" id="Theme_agvha"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1p1rb")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ooy3y")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk4wj"]
+bg_color = Color(0, 0.657608, 0.578777, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agvha"]
+bg_color = Color(0, 0.504595, 0.813745, 1)
+
+[node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ooy3y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.490196)
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_4gsl1")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1896.0
+offset_bottom = 1056.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gsl1")
+
+[node name="HP_MP_STM" type="VBoxContainer" parent="."]
+offset_left = 72.0
+offset_top = 240.0
+offset_right = 576.0
+offset_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="HP_STUFF" type="HBoxContainer" parent="HP_MP_STM"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="HP_BAR" type="ProgressBar" parent="HP_MP_STM/HP_STUFF"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_agvha")
+min_value = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="HP_TEXT" type="RichTextLabel" parent="HP_MP_STM/HP_STUFF"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "1200/1200"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="STM_STUFF" type="HBoxContainer" parent="HP_MP_STM"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="STM_BAR" type="ProgressBar" parent="HP_MP_STM/STM_STUFF"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_agvha")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vk4wj")
+min_value = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="STM_TEXT" type="RichTextLabel" parent="HP_MP_STM/STM_STUFF"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "1200/1200"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MP_STUFF" type="HBoxContainer" parent="HP_MP_STM"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="MP_BAR" type="ProgressBar" parent="HP_MP_STM/MP_STUFF"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_agvha")
+theme_override_styles/fill = SubResource("StyleBoxFlat_agvha")
+min_value = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="MP_TEXT" type="RichTextLabel" parent="HP_MP_STM/MP_STUFF"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "1200/1200"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="stats_container" type="VBoxContainer" parent="."]
+offset_left = 72.0
+offset_top = 432.0
+offset_right = 576.0
+offset_bottom = 696.0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+
+[node name="vigor_box" type="HBoxContainer" parent="stats_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="VIGOR" type="RichTextLabel" parent="stats_container/vigor_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "[b]VIGOR - [/b]"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="vigor_value" type="RichTextLabel" parent="stats_container/vigor_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "100"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="arcane_box" type="HBoxContainer" parent="stats_container"]
+custom_minimum_size = Vector2(504, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="ARCANE" type="RichTextLabel" parent="stats_container/arcane_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "[b]ARCANE - [/b]"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="arcane_value" type="RichTextLabel" parent="stats_container/arcane_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "100"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="vitality_box" type="HBoxContainer" parent="stats_container"]
+custom_minimum_size = Vector2(504, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="VITALITY" type="RichTextLabel" parent="stats_container/vitality_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "[b]VITALITY - [/b]"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="vitality_value" type="RichTextLabel" parent="stats_container/vitality_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "100"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="alacrity_box" type="HBoxContainer" parent="stats_container"]
+custom_minimum_size = Vector2(504, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="ALACRITY" type="RichTextLabel" parent="stats_container/alacrity_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "[b]ALACRITY - [/b]"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="alacrity_value" type="RichTextLabel" parent="stats_container/alacrity_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "100"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="fortune_box" type="HBoxContainer" parent="stats_container"]
+custom_minimum_size = Vector2(504, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="FORTUNE" type="RichTextLabel" parent="stats_container/fortune_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "[b]FORTUNE - [/b]"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="fortune_value" type="RichTextLabel" parent="stats_container/fortune_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "100"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
