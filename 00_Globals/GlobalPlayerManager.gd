@@ -6,6 +6,12 @@ var player : Player
 var player_spawned : bool = false
 var last_npc_touched : Node2D = null
 
+##Time Measurement Variables
+var game_time_seconds : int = 0
+var game_time_hours : int = 0
+var game_time_minutes : int = 0
+
+
 func _ready() -> void:
 	add_player_instance()
 

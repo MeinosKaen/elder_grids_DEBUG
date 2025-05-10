@@ -5,13 +5,12 @@ var first_name : String = "Nanni"
 var last_name : String = "Nella"
 var background : String = "Tony Award Winner"
 var player_context : String = "Exploration"
-## BG Quiz
-var brawler_type : int = 0
-var ranged_type : int = 0
-var magician_type : int = 0
-var gambler_type : int = 0
-var tank_type : int = 0
-var balanced_type : int = 0
+var current_money : int = 0
+
+#LvLing Info
+var lvl = 1
+var current_exp = 0
+var current_exp_threshold = 100
 
 # Attributes
 var vigor : int = 3
@@ -25,6 +24,14 @@ var max_stm : int = 100
 var current_hp : int = 70
 var current_mp : int = 30
 var current_stm : int = 15
+
+## BG Quiz
+var brawler_type : int = 0
+var ranged_type : int = 0
+var magician_type : int = 0
+var gambler_type : int = 0
+var tank_type : int = 0
+var balanced_type : int = 0
 
 # Topics
 ## General Topics

@@ -12,7 +12,7 @@ var invulnerable : bool = false
 @onready var sprite2d : Sprite2D = $Sprite2D_Idle
 @onready var StateMachine : PlayerStateMachine = $StateMachine
 @onready var hitbox: Hitbox = $Interactions/Hitbox
-
+@onready var game_time_timer: Timer = $game_time_timer
 
 signal DirectionChanged(new_direction:Vector2)
 
@@ -20,6 +20,7 @@ func _ready():
 	PlayerManager.player = self
 	StateMachine.Initialize(self)
 	hitbox.Damaged.connect(TakeDamage)
+	game_time_timer.start()
 	pass
 	
 func _process(delta):
@@ -92,3 +93,13 @@ func MakeInvulnerable(_duration:float=1.0) -> void:
 	invulnerable = false
 	hitbox.monitoring = true
 	pass
+
+
+func _on_game_time_timer_timeout() -> void:
+	PlayerManager.game_time_seconds += 1
+	if PlayerManager.game_time_seconds == 60:
+		PlayerManager.game_time_minutes += 1
+		PlayerManager.game_time_seconds = 0
+	if PlayerManager.game_time_minutes == 60:
+		PlayerManager.game_time_hours += 1
+		PlayerManager.game_time_minutes = 0

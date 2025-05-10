@@ -667,3 +667,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_h67fg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rwq4l")
 show_percentage = false
+
+[node name="game_time_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="game_time_timer" to="." method="_on_game_time_timer_timeout"]
