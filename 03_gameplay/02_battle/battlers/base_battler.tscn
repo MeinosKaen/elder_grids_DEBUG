@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3f3kng2yr5xt"]
+
+[ext_resource type="Script" uid="uid://c4qynqltkq1f5" path="res://03_gameplay/02_battle/battlers/base_battler.gd" id="1_wynrp"]
+
+[node name="BaseBattler" type="Node"]
+script = ExtResource("1_wynrp")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv6t0ouy88qmi"]
+
+[ext_resource type="Script" uid="uid://dqq46ejb2c8na" path="res://03_gameplay/02_battle/battle_skills/base_battle_skill.gd" id="1_k2ktg"]
+
+[node name="BaseBattleSkill" type="Node"]
+script = ExtResource("1_k2ktg")
