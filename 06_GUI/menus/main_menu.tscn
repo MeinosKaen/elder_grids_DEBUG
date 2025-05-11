@@ -60,6 +60,7 @@ corner_radius_bottom_left = 50
 
 [node name="MainMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 5
 script = ExtResource("1_ooy3y")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -546,18 +547,18 @@ text = "[b]TOPICS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Close_Button" type="Control" parent="SubMenus"]
+[node name="CRT_Button" type="Control" parent="SubMenus"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 
-[node name="CloseButton" type="Button" parent="SubMenus/Close_Button"]
+[node name="CRTButton" type="Button" parent="SubMenus/CRT_Button"]
 layout_mode = 0
 offset_right = 235.0
 offset_bottom = 65.0
 theme = ExtResource("2_1p1rb")
 
-[node name="CloseText" type="RichTextLabel" parent="SubMenus/Close_Button"]
+[node name="CRTText" type="RichTextLabel" parent="SubMenus/CRT_Button"]
 process_mode = 4
 layout_mode = 0
 offset_right = 235.0
@@ -565,7 +566,7 @@ offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
 bbcode_enabled = true
-text = "[b]CLOSE"
+text = "[b]CRT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -612,6 +613,29 @@ mouse_filter = 2
 theme = ExtResource("2_1p1rb")
 bbcode_enabled = true
 text = "[b]LOAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close_Button" type="Control" parent="SubMenus"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="CloseButton" type="Button" parent="SubMenus/Close_Button"]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 65.0
+theme = ExtResource("2_1p1rb")
+
+[node name="CloseText" type="RichTextLabel" parent="SubMenus/Close_Button"]
+process_mode = 4
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 65.0
+mouse_filter = 2
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "[b]CLOSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -725,7 +749,8 @@ theme = ExtResource("2_1p1rb")
 text = "MYSTERIES - 100"
 
 [connection signal="button_up" from="SubMenus/Topics_Button/TopicsButton" to="." method="_on_topics_button_button_up"]
-[connection signal="pressed" from="SubMenus/Close_Button/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="SubMenus/CRT_Button/CRTButton" to="." method="_on_crt_button_pressed"]
 [connection signal="pressed" from="SubMenus/Save_Button/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="SubMenus/Load_Button/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="SubMenus/Close_Button/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="SubMenus/ExitGame_Button/ExitButton" to="." method="_on_exit_button_pressed"]

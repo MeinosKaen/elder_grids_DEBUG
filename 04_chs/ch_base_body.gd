@@ -13,6 +13,7 @@ var invulnerable : bool = false
 @onready var StateMachine : PlayerStateMachine = $StateMachine
 @onready var hitbox: Hitbox = $Interactions/Hitbox
 @onready var game_time_timer: Timer = $game_time_timer
+@onready var post_process_node: CanvasLayer = $PostProcess
 
 signal DirectionChanged(new_direction:Vector2)
 

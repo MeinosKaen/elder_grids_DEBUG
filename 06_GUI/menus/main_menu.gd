@@ -23,7 +23,7 @@ extends CanvasLayer
 var submenu_up : bool = false
 var current_submenu : String = "None"
 @onready var topics_sub: Control = $Topics_Sub
-
+var post_effects : bool = true
 
 func _ready() -> void:
 	get_tree().paused = true
@@ -118,3 +118,14 @@ func _on_load_button_pressed() -> void:
 func _on_save_button_pressed() -> void:
 	SaveManager.save_game()
 	self.queue_free()
+
+
+func _on_crt_button_pressed() -> void:
+	if post_effects == true:
+		PlayerManager.player.post_process_node.visible = false
+		PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_DISABLED
+		post_effects = false
+	elif post_effects == false:
+		PlayerManager.player.post_process_node.visible = true
+		PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_INHERIT
+		post_effects = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dey0s17ltu0m0"]
+[gd_scene load_steps=46 format=3 uid="uid://dey0s17ltu0m0"]
 
 [ext_resource type="Script" uid="uid://cxkqsxx3k73lw" path="res://04_chs/ch_base_body.gd" id="1_swf5f"]
 [ext_resource type="Texture2D" uid="uid://dc1fsg1evx5qy" path="res://04_chs/npcs/spritesheets/fbb_future1.png" id="2_ibe34"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bfxbsouyehpqo" path="res://scripts/state_stun.gd" id="13_ibe34"]
 [ext_resource type="Script" uid="uid://c5kscw3ffbwmq" path="res://04_chs/player/player_hud.gd" id="14_i50u7"]
 [ext_resource type="PackedScene" uid="uid://dj2cq1vls5yxg" path="res://07_genNodes/Hitbox/hitbox.tscn" id="14_pikll"]
+[ext_resource type="Shader" uid="uid://b2wual0e56baf" path="res://shaders/realisticCRT.gdshader" id="17_h2oy8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2oy8"]
 
@@ -518,6 +519,23 @@ bg_color = Color(2.69532e-06, 0.717988, 0.36901, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwq4l"]
 bg_color = Color(0, 0.634462, 0.960894, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2oy8"]
+shader = ExtResource("17_h2oy8")
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/scan_line_amount = 0.2
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.25
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.15
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.0
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -4.0
+shader_parameter/pixel_strength = -2.0
+
 [node name="ch_player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 4358
@@ -548,6 +566,7 @@ zoom = Vector2(2, 2)
 script = ExtResource("4_1tofp")
 
 [node name="DEBUG_LAYER" type="CanvasLayer" parent="."]
+layer = 4
 
 [node name="DEBUG" type="Control" parent="DEBUG_LAYER"]
 layout_mode = 3
@@ -635,6 +654,7 @@ shape = SubResource("CapsuleShape2D_pikll")
 debug_color = Color(0, 0.690196, 0.443137, 0.0196078)
 
 [node name="playerHUD" type="CanvasLayer" parent="."]
+layer = 4
 script = ExtResource("14_i50u7")
 
 [node name="FullScreen" type="Control" parent="playerHUD"]
@@ -669,5 +689,17 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_rwq4l")
 show_percentage = false
 
 [node name="game_time_timer" type="Timer" parent="."]
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="PostProcessRect" type="ColorRect" parent="PostProcess"]
+material = SubResource("ShaderMaterial_h2oy8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="game_time_timer" to="." method="_on_game_time_timer_timeout"]
