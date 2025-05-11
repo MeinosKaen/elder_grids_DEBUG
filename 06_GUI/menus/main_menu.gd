@@ -36,9 +36,13 @@ var current_submenu : String = "None"
 @onready var topics_sub: Control = $Topics_Sub
 var post_effects : bool = true
 
+@onready var test_unique = $TestUniqueTopic
+@onready var topic_description: RichTextLabel = $topic_description
+
 func _ready() -> void:
 	get_tree().paused = true
 	refresh_values()
+	topic_description.text = test_unique.topic_description
 
 func _input(event: InputEvent) -> void:
 	if PlayerStats.player_context == "Main Menu":

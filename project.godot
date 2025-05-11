@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="elder_grids"
-run/main_scene="uid://dplhrw4saj40g"
+run/main_scene="uid://fl2h1bs3saub"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 config/size/viewport_height=648

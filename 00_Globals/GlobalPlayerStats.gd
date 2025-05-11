@@ -123,7 +123,7 @@ func add_new_topic(topic):
 func lvl_up_unique_topic(topic):
 	var lvling_topic = null
 	lvling_topic = unique_topics.find(topic)
-	lvling_topic.level +=1
+	lvling_topic.topic_step += 1
 
 func dialogue_is_finished():
 	DialogueFinished.emit()

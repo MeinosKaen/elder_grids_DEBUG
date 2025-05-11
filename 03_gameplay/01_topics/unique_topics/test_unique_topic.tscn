@@ -4,3 +4,5 @@
 
 [node name="TestUniqueTopic" type="Node"]
 script = ExtResource("1_4th8j")
+topic_name = "Test Topic"
+step_one_text = "res://03_gameplay/01_topics/unique_topics/test_json.json"
