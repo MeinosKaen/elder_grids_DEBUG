@@ -33,3 +33,27 @@ func _input(event: InputEvent) -> void:
 					main_menu.current_submenu = "Topics"
 					main_menu.topics_sub.process_mode = Node.PROCESS_MODE_INHERIT
 					main_menu.topics_sub.visible = true
+			if current_button == crt_button:
+				if main_menu.post_effects == true:
+					PlayerManager.player.post_process_node.visible = false
+					PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_DISABLED
+					main_menu.post_effects = false
+				elif main_menu.post_effects == false:
+					PlayerManager.player.post_process_node.visible = true
+					PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_INHERIT
+					main_menu.post_effects = true
+			if current_button == close_button:
+				PlayerStats.player_context = "Exploration"
+				get_tree().paused = false
+				main_menu.queue_free()
+			if current_button == exit_game_button:
+				get_tree().quit()
+			if current_button == load_button:
+				PlayerStats.player_context = "Exploration"
+				get_tree().paused = false
+				main_menu.queue_free()
+				SaveManager.load_game()
+				await LevelManager.LevelLoadStarted
+			if current_button == save_button:
+				SaveManager.save_game()
+				main_menu.queue_free()

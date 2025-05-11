@@ -107,6 +107,15 @@ func _on_topics_button_pressed() -> void:
 		topics_sub.process_mode = Node.PROCESS_MODE_INHERIT
 		topics_sub.visible = true
 
+func _on_crt_button_pressed() -> void:
+	if post_effects == true:
+		PlayerManager.player.post_process_node.visible = false
+		PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_DISABLED
+		post_effects = false
+	elif post_effects == false:
+		PlayerManager.player.post_process_node.visible = true
+		PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_INHERIT
+		post_effects = true
 
 func _on_close_button_pressed() -> void:
 	if current_submenu != "None":
@@ -134,16 +143,6 @@ func _on_save_button_pressed() -> void:
 	SaveManager.save_game()
 	self.queue_free()
 
-
-func _on_crt_button_pressed() -> void:
-	if post_effects == true:
-		PlayerManager.player.post_process_node.visible = false
-		PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_DISABLED
-		post_effects = false
-	elif post_effects == false:
-		PlayerManager.player.post_process_node.visible = true
-		PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_INHERIT
-		post_effects = true
 
 func _on_status_button_mouse_entered() -> void:
 	if current_submenu != "None":
