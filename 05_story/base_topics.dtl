@@ -1,0 +1,111 @@
+if PlayerStats.current_targetNPC.talkative == false:
+	"It seems like this person doesn't want to talk."
+	jump end_timeline
+else:
+	jump topics_choices
+
+label topics_choices
+"What are you going to talk about?"
+
+- Weapons | [if { PlayerStats.current_targetNPC.npc_weapons} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_weapons} - 25
+	if {topic_comparison} > { PlayerStats.weapons}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_weapons} * 0.01
+		set {PlayerStats.weapons} += {topic_bonus}
+		jump success_talk
+		
+- Health | [if { PlayerStats.current_targetNPC.npc_health} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_health} - 25
+	if {topic_comparison} > { PlayerStats.health}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_health} * 0.01
+		set {PlayerStats.health} += {topic_bonus}
+		jump success_talk
+		
+- Monsters | [if { PlayerStats.current_targetNPC.npc_monsters} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_monsters} - 25
+	if {topic_comparison} > { PlayerStats.monsters}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_monsters} * 0.01
+		set {PlayerStats.monsters} += {topic_bonus}
+		jump success_talk
+		
+- Literature | [if { PlayerStats.current_targetNPC.npc_literature} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_literature} - 25
+	if {topic_comparison} > { PlayerStats.literature}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_literature} * 0.01
+		set {PlayerStats.literature} += {topic_bonus}
+		jump success_talk
+		
+- Nature | [if { PlayerStats.current_targetNPC.npc_nature} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_nature} - 25
+	if {topic_comparison} > { PlayerStats.nature}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_nature} * 0.01
+		set {PlayerStats.nature} += {topic_bonus}
+		jump success_talk
+- Romance | [if { PlayerStats.current_targetNPC.npc_romance} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_romance} - 25
+	if {topic_comparison} > { PlayerStats.romance}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_romance} * 0.01
+		set {PlayerStats.romance} += {topic_bonus}
+		jump success_talk
+		
+- Subterfuge | [if { PlayerStats.current_targetNPC.npc_subterfuge} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_subterfuge} - 25
+	if {topic_comparison} > { PlayerStats.subterfuge}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_subterfuge} * 0.01
+		set {PlayerStats.subterfuge} += {topic_bonus}
+		jump success_talk
+		
+- Commerce | [if { PlayerStats.current_targetNPC.npc_commerce} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_commerce} - 25
+	if {topic_comparison} > { PlayerStats.commerce}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_commerce} * 0.01
+		set {PlayerStats.commerce} += {topic_bonus}
+		jump success_talk
+		
+- Games | [if { PlayerStats.current_targetNPC.npc_games} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_games} - 25
+	if {topic_comparison} > { PlayerStats.games}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_games} * 0.01
+		set {PlayerStats.games} += {topic_bonus}
+		jump success_talk
+		
+- Mysteries | [if { PlayerStats.current_targetNPC.npc_mysteries} > 1.0]
+	set {topic_comparison} = { PlayerStats.current_targetNPC.npc_mysteries} - 25
+	if {topic_comparison} > { PlayerStats.mysteries}:
+		jump failed_talk
+	else:
+		set {topic_bonus} = { PlayerStats.current_targetNPC.npc_mysteries} * 0.01
+		set {PlayerStats.mysteries} += {topic_bonus}
+		jump success_talk
+
+label success_talk
+"You had a nice conversation. You feel like you've learned just a little bit more about the topic."
+set {PlayerStats.current_targetNPC.talkative} = false
+jump end_timeline
+
+label failed_talk
+"You had a nice conversation but you failed to grasp much. You should try talking with someone closer to your level of knowledge..."
+set {PlayerStats.current_targetNPC.talkative} = false
+jump end_timeline
+
+label end_timeline
+do PlayerStats.dialogue_is_finished()
+[end_timeline]

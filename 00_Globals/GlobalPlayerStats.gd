@@ -55,7 +55,7 @@ var mysteries : float = 1.0
 var unique_topics : Array[unique_topic] = []
 
 ##Topic Variables
-var current_targetNPC : Node = null
+var current_targetNPC = null
 
 # Functions
 ## Attribute Functions

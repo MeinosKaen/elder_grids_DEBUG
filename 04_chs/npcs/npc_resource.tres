@@ -6,7 +6,6 @@
 resource_local_to_scene = true
 script = ExtResource("1_ucrrc")
 npc_name = ""
-talkative = false
 npc_weapons = 1.0
 npc_health = 1.0
 npc_monsters = 1.0

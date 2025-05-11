@@ -17,6 +17,22 @@ var do_behaviour: bool = true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 
+@export var talkative : bool = true
+var npc_weapons : float = 1.0
+var npc_health : float = 1.0
+### ARCANE
+var npc_monsters : float = 1.0
+var npc_literature : float = 1.0
+### VITALITY
+var npc_nature : float = 1.0
+var npc_romance : float = 1.0
+### ALACRITY
+var npc_subterfuge : float = 1.0
+var npc_commerce : float = 1.0
+### FORTUNE
+var npc_games : float = 1.0
+var npc_mysteries : float = 1.0
+
 func _ready() -> void:
 	SetupNPC()
 	if Engine.is_editor_hint():
@@ -71,4 +87,14 @@ func SetupNPC() -> void:
 
 func SetNPCResource(_npc:NPCResource) -> void:
 	npc_resource = _npc
-	SetupNPC()
+	npc_weapons = npc_resource.npc_weapons
+	npc_health = npc_resource.npc_health
+	npc_monsters = npc_resource.npc_monsters
+	npc_literature = npc_resource.npc_literature
+	npc_nature = npc_resource.npc_nature
+	npc_romance = npc_resource.npc_romance
+	npc_subterfuge = npc_resource.npc_subterfuge
+	npc_commerce = npc_resource.npc_commerce
+	npc_games = npc_resource.npc_games
+	npc_mysteries = npc_resource.npc_mysteries
+	#SetupNPC()

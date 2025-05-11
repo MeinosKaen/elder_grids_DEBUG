@@ -22,7 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if PlayerStats.player_context != "Dialogue":
 			PlayerStats.player_context = "Dialogue"
-			PlayerStats.current_NPC = npc
+			PlayerStats.current_targetNPC = npc
 			npc.UpdateDirection(PlayerManager.player.global_position)
 			npc.state = "idle"
 			npc.velocity = Vector2.ZERO
@@ -37,6 +37,7 @@ func dialogue_finished() -> void:
 	npc.do_behaviour = true
 	npc.do_behaviour_enabled.emit()
 	PlayerStats.player_context = "Exploration"
+	PlayerStats.current_targetNPC = null
 	if npc.fixed_position != "None":
 		npc.direction_name = npc.fixed_position
 		npc.UpdateAnimation()
