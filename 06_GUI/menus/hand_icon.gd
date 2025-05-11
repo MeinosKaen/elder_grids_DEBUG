@@ -11,12 +11,21 @@ extends TextureRect
 @onready var close_button: Control = $"../SubMenus/Close_Button/CloseButton"
 @onready var exit_game_button: Control = $"../SubMenus/ExitGame_Button/ExitButton"
 var ButtonList : Array = []
-var submenu_buttons = [status_button, equip_button, items_button, topics_button, crt_button, save_button, load_button, close_button, exit_game_button]
 
 var current_button : Node = null
+var current_button_id : int = 0
 
 func _ready() -> void:
-	ButtonList.append_array(submenu_buttons)
+	ButtonList.append(status_button)
+	ButtonList.append(equip_button)
+	ButtonList.append(items_button)
+	ButtonList.append(topics_button)
+	ButtonList.append(crt_button)
+	ButtonList.append(save_button)
+	ButtonList.append(load_button)
+	ButtonList.append(close_button)
+	ButtonList.append(exit_game_button)
+	current_button = ButtonList[current_button_id]
 
 func hand_position_update(new_x:int,new_y:int,new_button:Node) -> void:
 	self.position.x = new_x -48
@@ -24,7 +33,19 @@ func hand_position_update(new_x:int,new_y:int,new_button:Node) -> void:
 	current_button = new_button
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_released("ui_down"):
+		current_button_id +=1
+		if current_button_id == ButtonList.size():
+			current_button_id = 0
+		var new_button = ButtonList[current_button_id]
+		hand_position_update(new_button.global_position.x,new_button.global_position.y,new_button)
+	elif event.is_action_released("ui_up"):
+		current_button_id -=1
+		if current_button_id < 0:
+			current_button_id = ButtonList.size()-1
+		var new_button = ButtonList[current_button_id]
+		hand_position_update(new_button.global_position.x,new_button.global_position.y,new_button)
+	if event.is_action_released("interact"):
 		if current_button != null:
 			if current_button == topics_button:
 				if main_menu.current_submenu != "None":
