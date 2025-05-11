@@ -52,6 +52,7 @@ var current_save : Dictionary ={
 		games = 1.0,
 		mysteries = 1.0,
 	},
+	player_unique_topics = []
 }
 
 func save_game() -> void:
@@ -167,3 +168,4 @@ func load_topics() -> void:
 	PlayerStats.commerce = current_save.player_gen_topics.commerce
 	PlayerStats.games = current_save.player_gen_topics.games
 	PlayerStats.mysteries = current_save.player_gen_topics.mysteries
+	PlayerStats.unique_topics = current_save.player_unique_topics
