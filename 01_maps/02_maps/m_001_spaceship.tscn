@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dplhrw4saj40g"]
+[gd_scene load_steps=38 format=4 uid="uid://dplhrw4saj40g"]
 
 [ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://01_maps/LevelTilemapBase.gd" id="1_nvvo7"]
 [ext_resource type="Script" uid="uid://bi41tp0kwemwc" path="res://01_maps/map_base.gd" id="1_v8yeq"]
@@ -11,7 +11,392 @@
 [ext_resource type="Texture2D" uid="uid://d27go364a4urp" path="res://08_CGs/textures/texture_GLASS.png" id="7_2p3sb"]
 [ext_resource type="PackedScene" uid="uid://wq6rdykglfka" path="res://04_chs/npcs/npc_randomizer.tscn" id="10_0j7eo"]
 [ext_resource type="Resource" uid="uid://bc22fqhf1aafu" path="res://05_story/test_timeline.dtl" id="11_jcsqw"]
+[ext_resource type="Script" uid="uid://or6oku1sr7en" path="res://04_chs/npcs/npc_resource.gd" id="11_wm48w"]
 [ext_resource type="PackedScene" uid="uid://eqrou1gwsj47" path="res://04_chs/npcs/npc_unique.tscn" id="12_0yt0u"]
+
+[sub_resource type="Resource" id="Resource_vcgy0"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_foivq"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_kst3o"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_astyc"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_5403e"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_bv7mn"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_p4sx1"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_sosol"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_yooly"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_tgeiy"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_aposm"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_jpbyi"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_5h1ky"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_ud1fr"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 30.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_bwxg3"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_jh0wu"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_b53ee"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_6q14j"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_2qwx0"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_1ld14"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_wml17"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_n7hwj"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_nrtcn"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
+
+[sub_resource type="Resource" id="Resource_ok7uw"]
+resource_local_to_scene = true
+script = ExtResource("11_wm48w")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0
 
 [node name="m001_spaceship" type="Node2D"]
 y_sort_enabled = true
@@ -119,6 +504,7 @@ y_sort_enabled = true
 [node name="modern_npc" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(384, 1704)
+npc_resource = SubResource("Resource_vcgy0")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -126,6 +512,7 @@ fixed_position = "up"
 [node name="modern_npc2" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(144, 1560)
+npc_resource = SubResource("Resource_foivq")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -133,6 +520,7 @@ fixed_position = "up"
 [node name="trad1_npc" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(192, 1560)
+npc_resource = SubResource("Resource_kst3o")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Trad1_men"
 fixed_position = "up"
@@ -140,6 +528,7 @@ fixed_position = "up"
 [node name="modern_npc3" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(240, 1560)
+npc_resource = SubResource("Resource_astyc")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -147,6 +536,7 @@ fixed_position = "up"
 [node name="modern_npc4" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(384, 1560)
+npc_resource = SubResource("Resource_5403e")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -154,6 +544,7 @@ fixed_position = "up"
 [node name="modern_npc5" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(672, 1416)
+npc_resource = SubResource("Resource_bv7mn")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -161,6 +552,7 @@ fixed_position = "up"
 [node name="modern_npc6" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(960, 1416)
+npc_resource = SubResource("Resource_p4sx1")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -168,6 +560,7 @@ fixed_position = "up"
 [node name="modern_npc7" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(432, 1128)
+npc_resource = SubResource("Resource_sosol")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -175,6 +568,7 @@ fixed_position = "up"
 [node name="modern_npc8" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(192, 1272)
+npc_resource = SubResource("Resource_yooly")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -182,6 +576,7 @@ fixed_position = "up"
 [node name="modern_npc9" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(672, 840)
+npc_resource = SubResource("Resource_tgeiy")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -189,6 +584,7 @@ fixed_position = "up"
 [node name="modern_npc10" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(864, 840)
+npc_resource = SubResource("Resource_aposm")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -196,6 +592,7 @@ fixed_position = "up"
 [node name="modern_npc11" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(912, 696)
+npc_resource = SubResource("Resource_jpbyi")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -203,6 +600,7 @@ fixed_position = "up"
 [node name="modern_npc12" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(720, 696)
+npc_resource = SubResource("Resource_5h1ky")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -210,6 +608,7 @@ fixed_position = "up"
 [node name="modern_npc13" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(240, 696)
+npc_resource = SubResource("Resource_ud1fr")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -217,6 +616,7 @@ fixed_position = "up"
 [node name="modern_npc14" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(240, 120)
+npc_resource = SubResource("Resource_bwxg3")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -224,6 +624,7 @@ fixed_position = "up"
 [node name="modern_npc15" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(672, 408)
+npc_resource = SubResource("Resource_jh0wu")
 dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
@@ -231,48 +632,56 @@ fixed_position = "up"
 [node name="child_npc" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(432, 1704)
+npc_resource = SubResource("Resource_b53ee")
 npc_group = "Children"
 fixed_position = "up"
 
 [node name="child_npc2" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(768, 1224)
+npc_resource = SubResource("Resource_6q14j")
 npc_group = "Children"
 fixed_position = "down"
 
 [node name="child_npc3" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(816, 1272)
+npc_resource = SubResource("Resource_2qwx0")
 npc_group = "Children"
 fixed_position = "left"
 
 [node name="child_npc4" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(144, 792)
+npc_resource = SubResource("Resource_1ld14")
 npc_group = "Children"
 fixed_position = "left"
 
 [node name="child_npc5" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(144, 816)
+npc_resource = SubResource("Resource_wml17")
 npc_group = "Children"
 fixed_position = "left"
 
 [node name="child_npc6" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(240, 552)
+npc_resource = SubResource("Resource_n7hwj")
 npc_group = "Children"
 fixed_position = "right"
 
 [node name="child_npc7" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(384, 552)
+npc_resource = SubResource("Resource_nrtcn")
 npc_group = "Children"
 fixed_position = "left"
 
 [node name="child_npc8" parent="NPCS" instance=ExtResource("10_0j7eo")]
 y_sort_enabled = true
 position = Vector2(720, 264)
+npc_resource = SubResource("Resource_ok7uw")
 npc_group = "Children"
 fixed_position = "down"
 

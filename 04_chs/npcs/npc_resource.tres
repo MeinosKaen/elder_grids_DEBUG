@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=2 format=3 uid="uid://bvv8ejy4vfci4"]
+
+[ext_resource type="Script" uid="uid://or6oku1sr7en" path="res://04_chs/npcs/npc_resource.gd" id="1_ucrrc"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_ucrrc")
+npc_name = ""
+talkative = false
+npc_weapons = 1.0
+npc_health = 1.0
+npc_monsters = 1.0
+npc_literature = 1.0
+npc_nature = 1.0
+npc_romance = 1.0
+npc_subterfuge = 1.0
+npc_commerce = 1.0
+npc_games = 1.0
+npc_mysteries = 1.0

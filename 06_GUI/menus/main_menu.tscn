@@ -687,14 +687,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_frd2m")
 layout_mode = 0
 offset_left = 24.0
 offset_top = 24.0
-offset_right = 323.0
+offset_right = 912.0
 offset_bottom = 621.0
 size_flags_horizontal = 2
 size_flags_vertical = 6
 theme_override_constants/separation = 12
 
-[node name="CommonTopicsLabel" type="RichTextLabel" parent="Topics_Sub/topics_container"]
+[node name="CommonHBox" type="HBoxContainer" parent="Topics_Sub/topics_container"]
 layout_mode = 2
+alignment = 1
+
+[node name="CommonTopicsLabel" type="RichTextLabel" parent="Topics_Sub/topics_container/CommonHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("2_1p1rb")
 bbcode_enabled = true
 text = "[b]COMMON TOPICS"
@@ -702,52 +707,59 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="weapons_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="common_topics_grid" type="GridContainer" parent="Topics_Sub/topics_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 3
+
+[node name="weapons_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "WEAPONS - 100"
 
-[node name="health_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="health_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "HEALTH - 100"
 
-[node name="monsters_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="monsters_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "MONSTERS - 100"
 
-[node name="literature_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="literature_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "LITERATURE - 100"
 
-[node name="nature_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="nature_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "NATURE - 100"
 
-[node name="romance_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="romance_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "ROMANCE - 100"
 
-[node name="subterfuge_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="subterfuge_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "SUBTERFUGE - 100"
 
-[node name="commerce_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="commerce_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "COMMERCE - 100"
 
-[node name="games_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="games_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "GAMES - 100"
 
-[node name="mysteries_button" type="Button" parent="Topics_Sub/topics_container"]
+[node name="mysteries_button" type="Button" parent="Topics_Sub/topics_container/common_topics_grid"]
 layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "MYSTERIES - 100"

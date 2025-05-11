@@ -22,6 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if PlayerStats.player_context != "Dialogue":
 			PlayerStats.player_context = "Dialogue"
+			PlayerStats.current_NPC = npc
 			npc.UpdateDirection(PlayerManager.player.global_position)
 			npc.state = "idle"
 			npc.velocity = Vector2.ZERO

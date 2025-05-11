@@ -54,6 +54,9 @@ var mysteries : float = 1.0
 # Unique Topics
 var unique_topics : Array[unique_topic] = []
 
+##Topic Variables
+var current_targetNPC : Node = null
+
 # Functions
 ## Attribute Functions
 func starter_attributes():
