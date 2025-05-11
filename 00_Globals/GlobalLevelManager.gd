@@ -12,6 +12,18 @@ func _ready() -> void:
 	await get_tree().process_frame
 	LevelLoaded.emit()
 
+func left_click(pos):#Function that simulates Left Click
+	var press = InputEventMouseButton.new()
+	press.set_button_index(MOUSE_BUTTON_LEFT)
+	press.set_position(pos)
+	press.set_pressed(true)
+	Input.parse_input_event(press)
+	var release = InputEventMouseButton.new()
+	release.set_button_index(MOUSE_BUTTON_LEFT)
+	release.set_position(pos)
+	release.set_pressed(false)
+	Input.parse_input_event(release)
+
 func ChangeTilemapBounds(bounds:Array[Vector2]) -> void:
 	current_tilemap_bounds = bounds
 	TileMapBoundsChanged.emit(bounds)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fl2h1bs3saub"]
+[gd_scene load_steps=17 format=3 uid="uid://fl2h1bs3saub"]
 
 [ext_resource type="Texture2D" uid="uid://fj3i8wo8odmy" path="res://08_CGs/textures/texture_BLUMOTES.jpg" id="1_4gsl1"]
 [ext_resource type="Script" uid="uid://8hsltlvquny8" path="res://06_GUI/menus/main_menu.gd" id="1_ooy3y"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://0f1cvygiyspj" path="res://icons/06_money.png" id="3_agvha"]
 [ext_resource type="Texture2D" uid="uid://bqbnrq5xno6ok" path="res://icons/07_time.png" id="5_vk4wj"]
 [ext_resource type="Script" uid="uid://i2qnw13oqshj" path="res://06_GUI/menus/topics_sub.gd" id="6_frd2m"]
+[ext_resource type="Script" uid="uid://8teneu5qsc4v" path="res://06_GUI/menus/sub_menus.gd" id="6_r70ip"]
+[ext_resource type="Script" uid="uid://bhe6wjaun7wla" path="res://06_GUI/menus/hand_icon.gd" id="8_40hks"]
+[ext_resource type="Texture2D" uid="uid://c43f1dfhevkx1" path="res://06_GUI/kenney_hand_cursor_border.png" id="8_r70ip"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gsl1"]
 bg_color = Color(0, 0, 0, 0.490196)
@@ -454,6 +457,7 @@ offset_bottom = 600.0
 size_flags_vertical = 2
 theme_override_constants/separation = 10
 alignment = 2
+script = ExtResource("6_r70ip")
 
 [node name="Status_Button" type="Control" parent="SubMenus"]
 layout_mode = 2
@@ -748,9 +752,26 @@ layout_mode = 2
 theme = ExtResource("2_1p1rb")
 text = "MYSTERIES - 100"
 
-[connection signal="button_up" from="SubMenus/Topics_Button/TopicsButton" to="." method="_on_topics_button_button_up"]
+[node name="HandIcon" type="TextureRect" parent="."]
+offset_left = 1560.0
+offset_top = 72.0
+offset_right = 1624.0
+offset_bottom = 136.0
+texture = ExtResource("8_r70ip")
+script = ExtResource("8_40hks")
+
+[connection signal="mouse_entered" from="SubMenus/Status_Button/StatusButton" to="." method="_on_status_button_mouse_entered"]
+[connection signal="mouse_entered" from="SubMenus/Equip_Button/EquipButton" to="." method="_on_equip_button_mouse_entered"]
+[connection signal="mouse_entered" from="SubMenus/Items_Button/ItemsButton" to="." method="_on_items_button_mouse_entered"]
+[connection signal="mouse_entered" from="SubMenus/Topics_Button/TopicsButton" to="." method="_on_topics_button_mouse_entered"]
+[connection signal="pressed" from="SubMenus/Topics_Button/TopicsButton" to="." method="_on_topics_button_pressed"]
+[connection signal="mouse_entered" from="SubMenus/CRT_Button/CRTButton" to="." method="_on_crt_button_mouse_entered"]
 [connection signal="pressed" from="SubMenus/CRT_Button/CRTButton" to="." method="_on_crt_button_pressed"]
+[connection signal="mouse_entered" from="SubMenus/Save_Button/SaveButton" to="." method="_on_save_button_mouse_entered"]
 [connection signal="pressed" from="SubMenus/Save_Button/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="mouse_entered" from="SubMenus/Load_Button/LoadButton" to="." method="_on_load_button_mouse_entered"]
 [connection signal="pressed" from="SubMenus/Load_Button/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="mouse_entered" from="SubMenus/Close_Button/CloseButton" to="." method="_on_close_button_mouse_entered"]
 [connection signal="pressed" from="SubMenus/Close_Button/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="mouse_entered" from="SubMenus/ExitGame_Button/ExitButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="SubMenus/ExitGame_Button/ExitButton" to="." method="_on_exit_button_pressed"]

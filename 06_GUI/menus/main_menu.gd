@@ -20,6 +20,17 @@ extends CanvasLayer
 @onready var money_value: RichTextLabel = $MONEY_TIME/money_box/money_value
 @onready var time_value: RichTextLabel = $MONEY_TIME/time_box/time_value
 
+@onready var hand_icon: TextureRect = $HandIcon
+@onready var status_button: Control = $SubMenus/Status_Button/StatusButton
+@onready var equip_button: Control = $SubMenus/Equip_Button/EquipButton
+@onready var items_button: Control = $SubMenus/Items_Button/ItemsButton
+@onready var topics_button: Control = $SubMenus/Topics_Button/TopicsButton
+@onready var crt_button: Control = $SubMenus/CRT_Button/CRTButton
+@onready var save_button: Control = $SubMenus/Save_Button/SaveButton
+@onready var load_button: Control = $SubMenus/Load_Button/LoadButton
+@onready var close_button: Control = $SubMenus/Close_Button/CloseButton
+@onready var exit_game_button: Control = $SubMenus/ExitGame_Button/ExitButton
+
 var submenu_up : bool = false
 var current_submenu : String = "None"
 @onready var topics_sub: Control = $Topics_Sub
@@ -32,9 +43,15 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if PlayerStats.player_context == "Main Menu":
 		if event.is_action_pressed("cancel"):
-			PlayerStats.player_context = "Exploration"
-			get_tree().paused = false
-			self.queue_free()
+			if current_submenu == "None":
+				PlayerStats.player_context = "Exploration"
+				get_tree().paused = false
+				self.queue_free()
+			if current_submenu == "Topics":
+				topics_sub.visible = false
+				topics_sub.process_mode = Node.PROCESS_MODE_DISABLED
+				current_submenu = "None"
+				return
 
 func refresh_values() -> void:
 	name_label.text = "[b]" + PlayerStats.first_name + " " + PlayerStats.last_name
@@ -77,9 +94,7 @@ func refresh_values() -> void:
 		s = str(PlayerManager.game_time_seconds)
 	time_value.text = h + ":" + m + ":" + s
 	
-
-
-func _on_topics_button_button_up() -> void:
+func _on_topics_button_pressed() -> void:
 	if current_submenu == "Topics":
 		topics_sub.visible = false
 		topics_sub.process_mode = Node.PROCESS_MODE_DISABLED
@@ -129,3 +144,48 @@ func _on_crt_button_pressed() -> void:
 		PlayerManager.player.post_process_node.visible = true
 		PlayerManager.player.post_process_node.process_mode = Node.PROCESS_MODE_INHERIT
 		post_effects = true
+
+func _on_status_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(status_button.global_position.x,status_button.global_position.y,status_button)
+
+func _on_equip_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(equip_button.global_position.x,equip_button.global_position.y,equip_button)
+
+func _on_items_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(items_button.global_position.x,items_button.global_position.y,items_button)
+
+func _on_topics_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(topics_button.global_position.x,topics_button.global_position.y,topics_button)
+
+func _on_crt_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(crt_button.global_position.x,crt_button.global_position.y,crt_button)
+
+func _on_save_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(save_button.global_position.x,save_button.global_position.y,save_button)
+
+func _on_load_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(load_button.global_position.x,load_button.global_position.y,load_button)
+
+func _on_close_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(close_button.global_position.x,close_button.global_position.y,close_button)
+
+func _on_exit_button_mouse_entered() -> void:
+	if current_submenu != "None":
+		return
+	hand_icon.hand_position_update(exit_game_button.global_position.x,exit_game_button.global_position.y,exit_game_button)
