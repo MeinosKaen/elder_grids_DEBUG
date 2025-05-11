@@ -37,7 +37,7 @@ directories/dch_directory={
 "checkie": "res://05_story/dialogic_characters/checkie.dch"
 }
 directories/dtl_directory={
-"base_topics": "res://05_story/base_topics.dtl",
+"base_topics": "res://03_gameplay/01_topics/base_topics.dtl",
 "test_timeline": "res://05_story/test_timeline.dtl"
 }
 variables={

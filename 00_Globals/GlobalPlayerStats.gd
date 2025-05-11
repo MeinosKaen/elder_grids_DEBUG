@@ -117,9 +117,6 @@ func lvl_up_hp_mp():
 	current_mp = max_mp
 
 ## Topic Functions
-func lvl_up_topic(topic,npc_level):
-	topic += int(npc_level * 0.01)
-
 func add_new_topic(topic):
 	unique_topics.append(topic)
 

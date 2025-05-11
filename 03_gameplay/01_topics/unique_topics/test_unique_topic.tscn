@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7up065x3557v"]
+
+[ext_resource type="Script" uid="uid://bupba8qth2bet" path="res://03_gameplay/01_topics/unique_topic.gd" id="1_4th8j"]
+
+[node name="TestUniqueTopic" type="Node"]
+script = ExtResource("1_4th8j")

@@ -18,6 +18,8 @@ var do_behaviour: bool = true
 @onready var sprite: Sprite2D = $Sprite2D
 
 @export var talkative : bool = true
+@export var amicability : float = 10.0
+
 var npc_weapons : float = 1.0
 var npc_health : float = 1.0
 ### ARCANE

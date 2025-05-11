@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://bc22fqhf1aafu" path="res://05_story/test_timeline.dtl" id="11_jcsqw"]
 [ext_resource type="Script" uid="uid://or6oku1sr7en" path="res://04_chs/npcs/npc_resource.gd" id="11_wm48w"]
 [ext_resource type="PackedScene" uid="uid://eqrou1gwsj47" path="res://04_chs/npcs/npc_unique.tscn" id="12_0yt0u"]
-[ext_resource type="Resource" uid="uid://dv4mnhvml1oo" path="res://05_story/base_topics.dtl" id="12_vcgy0"]
+[ext_resource type="Resource" uid="uid://dv4mnhvml1oo" path="res://03_gameplay/01_topics/base_topics.dtl" id="12_vcgy0"]
 
 [sub_resource type="Resource" id="Resource_vcgy0"]
 resource_local_to_scene = true
