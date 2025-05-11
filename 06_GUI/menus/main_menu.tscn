@@ -569,6 +569,29 @@ text = "[b]CLOSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Save_Button" type="Control" parent="SubMenus"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="SaveButton" type="Button" parent="SubMenus/Save_Button"]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 65.0
+theme = ExtResource("2_1p1rb")
+
+[node name="SaveText" type="RichTextLabel" parent="SubMenus/Save_Button"]
+process_mode = 4
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 65.0
+mouse_filter = 2
+theme = ExtResource("2_1p1rb")
+bbcode_enabled = true
+text = "[b]SAVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Load_Button" type="Control" parent="SubMenus"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -588,7 +611,7 @@ offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
 bbcode_enabled = true
-text = "[b]SAVE"
+text = "[b]LOAD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -703,5 +726,6 @@ text = "MYSTERIES - 100"
 
 [connection signal="button_up" from="SubMenus/Topics_Button/TopicsButton" to="." method="_on_topics_button_button_up"]
 [connection signal="pressed" from="SubMenus/Close_Button/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="SubMenus/Save_Button/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="SubMenus/Load_Button/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="SubMenus/ExitGame_Button/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -108,5 +108,13 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_load_button_pressed() -> void:
+	PlayerStats.player_context = "Exploration"
+	get_tree().paused = false
+	self.queue_free()
+	SaveManager.load_game()
+	await LevelManager.LevelLoadStarted
+
+
+func _on_save_button_pressed() -> void:
 	SaveManager.save_game()
-	pass # Replace with function body.
+	self.queue_free()
