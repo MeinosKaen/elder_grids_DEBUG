@@ -24,10 +24,11 @@ buses/default_bus_layout="uid://bm2a72sf2qlqo"
 [autoload]
 
 AudioManager="*res://00_Globals/GlobalAudioManager.gd"
-LevelManager="*res://00_Globals/GlobalLevelManager.gd"
 PlayerManager="*res://00_Globals/GlobalPlayerManager.gd"
 MapTransition="*res://06_GUI/transitions/map_transition.tscn"
+LevelManager="*res://00_Globals/GlobalLevelManager.gd"
 PlayerStats="*res://00_Globals/GlobalPlayerStats.gd"
+SaveManager="*res://00_Globals/GlobalSaveManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]

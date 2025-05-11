@@ -459,13 +459,13 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 
-[node name="TopicsButton" type="Button" parent="SubMenus/Status_Button"]
+[node name="StatusButton" type="Button" parent="SubMenus/Status_Button"]
 layout_mode = 0
 offset_right = 235.0
 offset_bottom = 65.0
 theme = ExtResource("2_1p1rb")
 
-[node name="TopicsText" type="RichTextLabel" parent="SubMenus/Status_Button"]
+[node name="StatusText" type="RichTextLabel" parent="SubMenus/Status_Button"]
 process_mode = 4
 layout_mode = 0
 offset_right = 235.0
@@ -482,13 +482,13 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 
-[node name="TopicsButton" type="Button" parent="SubMenus/Equip_Button"]
+[node name="EquipButton" type="Button" parent="SubMenus/Equip_Button"]
 layout_mode = 0
 offset_right = 235.0
 offset_bottom = 65.0
 theme = ExtResource("2_1p1rb")
 
-[node name="TopicsText" type="RichTextLabel" parent="SubMenus/Equip_Button"]
+[node name="EquipText" type="RichTextLabel" parent="SubMenus/Equip_Button"]
 process_mode = 4
 layout_mode = 0
 offset_right = 235.0
@@ -505,13 +505,13 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 
-[node name="TopicsButton" type="Button" parent="SubMenus/Items_Button"]
+[node name="ItemsButton" type="Button" parent="SubMenus/Items_Button"]
 layout_mode = 0
 offset_right = 235.0
 offset_bottom = 65.0
 theme = ExtResource("2_1p1rb")
 
-[node name="TopicsText" type="RichTextLabel" parent="SubMenus/Items_Button"]
+[node name="ItemsText" type="RichTextLabel" parent="SubMenus/Items_Button"]
 process_mode = 4
 layout_mode = 0
 offset_right = 235.0
@@ -588,7 +588,7 @@ offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
 bbcode_enabled = true
-text = "[b]LOAD"
+text = "[b]SAVE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -617,6 +617,7 @@ vertical_alignment = 1
 
 [node name="Topics_Sub" type="Control" parent="."]
 process_mode = 4
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 576.0
@@ -702,4 +703,5 @@ text = "MYSTERIES - 100"
 
 [connection signal="button_up" from="SubMenus/Topics_Button/TopicsButton" to="." method="_on_topics_button_button_up"]
 [connection signal="pressed" from="SubMenus/Close_Button/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="SubMenus/Load_Button/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="SubMenus/ExitGame_Button/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -105,3 +105,8 @@ func _on_exit_button_pressed() -> void:
 	if current_submenu != "None":
 		return
 	get_tree().quit()
+
+
+func _on_load_button_pressed() -> void:
+	SaveManager.save_game()
+	pass # Replace with function body.
