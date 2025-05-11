@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://fl2h1bs3saub"]
+[gd_scene load_steps=17 format=3 uid="uid://fl2h1bs3saub"]
 
 [ext_resource type="Texture2D" uid="uid://fj3i8wo8odmy" path="res://08_CGs/textures/texture_BLUMOTES.jpg" id="1_4gsl1"]
 [ext_resource type="Script" uid="uid://8hsltlvquny8" path="res://06_GUI/menus/main_menu.gd" id="1_ooy3y"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://8teneu5qsc4v" path="res://06_GUI/menus/sub_menus.gd" id="6_r70ip"]
 [ext_resource type="Script" uid="uid://bhe6wjaun7wla" path="res://06_GUI/menus/hand_icon.gd" id="8_40hks"]
 [ext_resource type="Texture2D" uid="uid://c43f1dfhevkx1" path="res://06_GUI/kenney_hand_cursor_border.png" id="8_r70ip"]
-[ext_resource type="PackedScene" uid="uid://c7up065x3557v" path="res://03_gameplay/01_topics/unique_topics/test_unique_topic.tscn" id="10_d2htn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gsl1"]
 bg_color = Color(0, 0, 0, 0.490196)
@@ -66,8 +65,6 @@ corner_radius_bottom_left = 50
 process_mode = 3
 layer = 5
 script = ExtResource("1_ooy3y")
-
-[node name="TestUniqueTopic" parent="." instance=ExtResource("10_d2htn")]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.490196)
@@ -669,15 +666,9 @@ text = "[b]EXIT GAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="topic_description" type="RichTextLabel" parent="."]
-offset_left = 600.0
-offset_top = 528.0
-offset_right = 1488.0
-offset_bottom = 888.0
-theme = ExtResource("2_1p1rb")
-
 [node name="Topics_Sub" type="Control" parent="."]
 process_mode = 4
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 576.0
