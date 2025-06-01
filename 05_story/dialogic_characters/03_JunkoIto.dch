@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "preIsekai",
+&"description": "Gyaru type with a crush on the MC. The shine is less about him as a person and more about what he presents: an adult who has successfully built a life for himself not once, but twice. She's unmoored, only guided by her love for others and familial expectations, with no desires of her own.",
+&"display_name": "Junko Ito",
+&"mirror": false,
+&"nicknames": ["Junko"],
+&"offset": Vector2(0, 65),
+&"portraits": {
+"preIsekai": {
+"export_overrides": {
+"image": "\"res://05_story/dialogic_characters/dialogic_portraits/02_JunkoIto.jpg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.45
+}

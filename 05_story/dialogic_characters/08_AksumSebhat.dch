@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "preIsekai",
+&"description": "A member of a church who believes in a divinity that takes a different shape for each individual, depending on their faith and personality. The cult is headquartered on the moon colony, from where they believe a better vantage point to find the source of god in space can be obtained. He instead believes that God will be revealed by man, from within man... Under the right circumstances.",
+&"display_name": "Aksum Sebhat",
+&"mirror": false,
+&"nicknames": ["Aksum"],
+&"offset": Vector2(0, 65),
+&"portraits": {
+"preIsekai": {
+"export_overrides": {
+"image": "\"res://05_story/dialogic_characters/dialogic_portraits/07_AksumSebhat.jpg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.45
+}

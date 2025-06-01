@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "preIsekai",
+&"description": "A supreme over-achiever, who managed to succeed in everything he put his mind to in life and is enthusiastic about sharing this with others. He believes himself not above others, he just has followed the right path.",
+&"display_name": "Cesare Kohl",
+&"mirror": false,
+&"nicknames": ["Cesare"],
+&"offset": Vector2(0, 65),
+&"portraits": {
+"preIsekai": {
+"export_overrides": {
+"image": "\"res://05_story/dialogic_characters/dialogic_portraits/06_CesareKohl.jpg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.45
+}

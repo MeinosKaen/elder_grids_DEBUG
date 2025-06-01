@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "preIsekai",
+&"description": "Came out of a stringent family situation with a taste for independence and a distaste for laws and regulations, and attempts at a defined identity. Anything that binds and defines, they reject and avoid, including the bonds of love.",
+&"display_name": "Vieno Miyazaki",
+&"mirror": false,
+&"nicknames": ["Vieno"],
+&"offset": Vector2(0, 65),
+&"portraits": {
+"preIsekai": {
+"export_overrides": {
+"image": "\"res://05_story/dialogic_characters/dialogic_portraits/04_VienoMiyazaki.jpg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.45
+}

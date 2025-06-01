@@ -34,6 +34,14 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Aksum": "res://05_story/dialogic_characters/08_AksumSebhat.dch",
+"Cesare": "res://05_story/dialogic_characters/07_CesareKohl.dch",
+"Henry": "res://05_story/dialogic_characters/04_HenryPark.dch",
+"Joan": "res://05_story/dialogic_characters/06_JoanRosenthal.dch",
+"Junko": "res://05_story/dialogic_characters/03_JunkoIto.dch",
+"Santa": "res://05_story/dialogic_characters/02_SantaMontanari.dch",
+"Sensei": "res://05_story/dialogic_characters/01_main_character.dch",
+"Vieno": "res://05_story/dialogic_characters/05_VienoMiyazaki.dch",
 "checkie": "res://05_story/dialogic_characters/checkie.dch"
 }
 directories/dtl_directory={

@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "preIsekai",
+&"description": "Principal, woman who's looking forward to retirement. She's guided three generations of students, and become more and more disappointed. She's not even angry about it, she's just utterly detatched. She believes society's best years are behind us.",
+&"display_name": "Santa Montanari",
+&"mirror": false,
+&"nicknames": ["Santa"],
+&"offset": Vector2(0, 65),
+&"portraits": {
+"preIsekai": {
+"export_overrides": {
+"image": "\"res://05_story/dialogic_characters/dialogic_portraits/01_SantaMontanari.jpg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.45
+}
