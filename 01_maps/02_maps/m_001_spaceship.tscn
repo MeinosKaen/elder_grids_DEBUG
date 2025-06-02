@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dplhrw4saj40g"]
+[gd_scene load_steps=41 format=4 uid="uid://dplhrw4saj40g"]
 
 [ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://01_maps/LevelTilemapBase.gd" id="1_nvvo7"]
 [ext_resource type="Script" uid="uid://bi41tp0kwemwc" path="res://01_maps/map_base.gd" id="1_v8yeq"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://b5fhjosmak0jg" path="res://01_maps/01_tilesets/01_future/spaceship_tiles.tres" id="2_y06t2"]
 [ext_resource type="TileSet" uid="uid://d1kr24o56p3t1" path="res://01_maps/01_tilesets/01_future/spaceship_tiles_24.tres" id="3_8ntpf"]
 [ext_resource type="AudioStream" uid="uid://dyjxaykkhax1y" path="res://02_audio/bgs/ellr_Spaceship_Interior.ogg" id="3_b3qmc"]
+[ext_resource type="Resource" uid="uid://7v5qynfdreuc" path="res://05_story/story_timelines/st01_tickettoride.dtl" id="4_kst3o"]
 [ext_resource type="PackedScene" uid="uid://dtr22df8mlxdx" path="res://01_maps/debug_maps/player_spawn.tscn" id="5_tf6gs"]
 [ext_resource type="Texture2D" uid="uid://x03ktnf22msi" path="res://08_CGs/parallaxes/parallax_Universe.png" id="6_v8yeq"]
 [ext_resource type="Texture2D" uid="uid://d27go364a4urp" path="res://08_CGs/textures/texture_GLASS.png" id="7_2p3sb"]
@@ -14,6 +15,7 @@
 [ext_resource type="Script" uid="uid://or6oku1sr7en" path="res://04_chs/npcs/npc_resource.gd" id="11_wm48w"]
 [ext_resource type="PackedScene" uid="uid://eqrou1gwsj47" path="res://04_chs/npcs/npc_unique.tscn" id="12_0yt0u"]
 [ext_resource type="Resource" uid="uid://dv4mnhvml1oo" path="res://03_gameplay/01_topics/base_topics.dtl" id="12_vcgy0"]
+[ext_resource type="PackedScene" uid="uid://dekkexk6p2np6" path="res://04_chs/npcs/story_chs/st_Santa.tscn" id="15_foivq"]
 
 [sub_resource type="Resource" id="Resource_vcgy0"]
 resource_local_to_scene = true
@@ -380,6 +382,7 @@ y_sort_enabled = true
 script = ExtResource("1_v8yeq")
 BGM = ExtResource("2_b3qmc")
 BGS = ExtResource("3_b3qmc")
+Cutscene = ExtResource("4_kst3o")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -3
@@ -461,7 +464,7 @@ polygon = PackedVector2Array(528, -216, 528, -36, 144, -36, 144, -216)
 polygon = PackedVector2Array(384, 2160, 384, 2010, 390, 2010, 391.04, 2064, 760.363, 2064, 762, 2010, 768, 2010, 768, 2160)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_tf6gs")]
-position = Vector2(552, 1968)
+position = Vector2(144, 1656)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.989179, 0.946479, 0.895573, 1)
@@ -663,8 +666,13 @@ npc_group = "Children"
 fixed_position = "down"
 
 [node name="NPC_unique" parent="NPCS" instance=ExtResource("12_0yt0u")]
+y_sort_enabled = true
 position = Vector2(624, 1704)
 fixed_position = "up"
+
+[node name="Santa Montanari" parent="NPCS" instance=ExtResource("15_foivq")]
+y_sort_enabled = true
+position = Vector2(240, 1704)
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 modulate = Color(1, 1, 1, 0.196078)

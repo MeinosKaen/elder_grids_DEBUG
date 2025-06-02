@@ -22,6 +22,7 @@ func _ready():
 	StateMachine.Initialize(self)
 	hitbox.Damaged.connect(TakeDamage)
 	game_time_timer.start()
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	pass
 	
 func _process(delta):
@@ -104,3 +105,14 @@ func _on_game_time_timer_timeout() -> void:
 	if PlayerManager.game_time_minutes == 60:
 		PlayerManager.game_time_hours += 1
 		PlayerManager.game_time_minutes = 0
+
+func _on_dialogic_signal(command:String):
+	if command == "mc_turnleft":
+		animation_player.play("idle_left")
+	if command == "mc_turnup":
+		animation_player.play("idle_up")
+	if command == "mc_turnright":
+		animation_player.play("idle_right")
+	if command == "mc_turndown":
+		animation_player.play("idle_down")
+	return

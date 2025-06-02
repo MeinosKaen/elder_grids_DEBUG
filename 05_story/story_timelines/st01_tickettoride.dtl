@@ -1,0 +1,71 @@
+label st01_ticket
+[signal arg="mc_turnleft"]
+[signal arg="santa_turnleft"]
+[b]Ticket to Ride\:[/b][pause=0.5] Neo Brussels Spaceport to Selene Spaceport 01, 09\:30-15\:30
+Please insert your full name.
+[text_input text="Enter your first name" var="FirstName" placeholder="Arata" default="Arata"]
+[text_input text="Enter your last name" var="LastName" placeholder="Di Gennaro" default="Di Gennaro"]
+label st01_awakening
+set {PlayerStats.last_name} = {LastName}
+set {PlayerStats.last_name} = {FirstName}
+Santa: ...{PlayerStats.last_name}?[pause=0.5] Professor {PlayerStats.last_name}!
+[signal arg="mc_surprise"]
+[wait time="1.0"]
+[signal arg="mc_turndown"]
+[wait time="1.0"]
+Santa: Is the vast void of space smearing past us at twice the speed of sound really that interesting to you, Professor?
+Santa: You're almost as excited as the students.
+- I have been looking forward to this!
+	set {PlayerStats.ranged_type} += 1
+	jump answer01
+- It's a new experience. Who knows what awaits.
+	set {PlayerStats.gambler_type} += 1
+	jump answer01
+- We deserve a reward after finals, too.
+	set {PlayerStats.tank_type} += 1
+	jump answer01
+- I mean... It's the moon colony.
+	set {PlayerStats.balanced_type} += 1
+	jump answer01
+
+label answer01
+Santa: ...I forget, there's not that many years that separate you from them, are there?[pause=0.3] You're barely a decade their senior.
+[signal arg="santa_turnup"]
+Santa: Thus, you still share that wide-eyed wonder at much of the world...[pause=0.3] Life hasn't beaten that out of you yet.
+[signal]
+Santa: .[pause=0.15].[pause=0.15].[pause=0.3] Twenty-five years I have taught at this school.[pause=0.3] First as a simple Professor, just like you.[pause=0.3] Then as Vice-Headmaster, then Headmaster...
+Santa: And with each year, each new batch of students, I lost a little bit more of passion for the role.[pause=0.3] In equal measure as the students lost drive and respect.
+[signal arg="santa_turnleft"]
+Santa: Visiting the Selene Moon Colony?[pause=0.3] It's the twenty-fifth time, for me.[pause=0.3] It's been turned into yet another chore...
+- Think of it as an anniversary in a storied career.
+	set {PlayerStats.magician_type} += 1
+	jump answer02_A
+- Maybe this time it will be different!
+	set {PlayerStats.gambler_type} += 1
+	jump answer02_B
+- And yet you bear with it for their benefit.
+	set {PlayerStats.tank_type} += 1
+	jump answer02_C
+- There are worse places to visit that often.
+	set {PlayerStats.balanced_type} += 1
+	jump answer02_D
+
+label answer02_A
+Santa: Storied?[pause=0.15] Most definitely.[pause=0.3] But there's nothing about this anniversary that I see worth celebrating.
+jump answer02_continued
+label answer02_B
+Santa: I see nothing substantially different in the trip, program or company to warrant such newfound optimism, Professor...
+jump answer02_continued
+label answer02_C
+Santa: Their benefit?[pause=0.3] Hardly.[pause=0.3] I do it because it is my job.[pause=0.3] I've been nothing but an educator for my entire life.
+jump answer02_continued
+label answer02_D
+Santa: Perhaps.[pause=0.3] But I fear that accompanying these brats would turn even visiting mighty heaven into a chore.
+jump answer02_continued
+
+label answer02_continued
+Santa: Either way, returning to my original request\:[pause=0.15] as we're about to arrive, please make one last round to check on our scattered students in this compartment.
+[signal arg="santa_turnup"]
+Santa: They'd best prepare for customs and get rid of anything [i]untoward[/i] before we land.[pause=0.15] I'm sure the ones we missed will have let down their guards, by now.
+set {PlayerStats.player_context} = "Exploration"
+[end_timeline]

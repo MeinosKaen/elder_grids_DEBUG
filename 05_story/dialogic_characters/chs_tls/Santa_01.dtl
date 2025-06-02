@@ -1,0 +1,2 @@
+Santa: I can't be bothered to try and remember the seating map, at this moment.[pause=0.3] Just wander, Professor. You will find them in due time, it's not [i]that[/i] big of a compartment.
+do dialogue_node.dialogue_finished()

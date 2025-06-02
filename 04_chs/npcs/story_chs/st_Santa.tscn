@@ -1,0 +1,203 @@
+[gd_scene load_steps=16 format=3 uid="uid://dekkexk6p2np6"]
+
+[ext_resource type="Script" uid="uid://ht3s0b068gus" path="res://04_chs/npcs/npc_cutscene.gd" id="1_loqbj"]
+[ext_resource type="Texture2D" uid="uid://c7aywbswq2i6s" path="res://04_chs/npcs/spritesheets/ffb_trad2/old_woman.png" id="2_jwll4"]
+[ext_resource type="Script" uid="uid://dc0eoae8hgfr3" path="res://04_chs/npcs/npc_dialogue.gd" id="3_qb5be"]
+
+[sub_resource type="Animation" id="Animation_kklgy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_222a6"]
+resource_name = "idle_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_x1046"]
+resource_name = "idle_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_5u78f"]
+resource_name = "idle_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_ixp6q"]
+resource_name = "idle_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_uoa7v"]
+resource_name = "walk_down"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_xax17"]
+resource_name = "walk_left"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_1uhot"]
+resource_name = "walk_right"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_xblea"]
+resource_name = "walk_up"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kklgy"]
+_data = {
+&"RESET": SubResource("Animation_kklgy"),
+&"idle_down": SubResource("Animation_222a6"),
+&"idle_left": SubResource("Animation_x1046"),
+&"idle_right": SubResource("Animation_5u78f"),
+&"idle_up": SubResource("Animation_ixp6q"),
+&"walk_down": SubResource("Animation_uoa7v"),
+&"walk_left": SubResource("Animation_xax17"),
+&"walk_right": SubResource("Animation_1uhot"),
+&"walk_up": SubResource("Animation_xblea")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21up0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xax17"]
+
+[node name="Santa Montanari" type="CharacterBody2D"]
+collision_layer = 4096
+collision_mask = 261
+motion_mode = 1
+wall_min_slide_angle = 0.174533
+script = ExtResource("1_loqbj")
+fixed_position = "up"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(26, 36)
+texture = ExtResource("2_jwll4")
+hframes = 3
+vframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kklgy")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 52)
+scale = Vector2(1.1, 0.8)
+shape = SubResource("CapsuleShape2D_21up0")
+debug_color = Color(0, 0.6, 0.701961, 0.231373)
+
+[node name="dialogue_check" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource("3_qb5be")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue_check"]
+position = Vector2(25, 43)
+scale = Vector2(1.75, 1.75)
+shape = SubResource("CapsuleShape2D_xax17")
+debug_color = Color(0.157717, 0.609158, 0.43235, 0.054902)
