@@ -673,9 +673,6 @@ fixed_position = "up"
 [node name="Santa Montanari" parent="NPCS" instance=ExtResource("15_foivq")]
 y_sort_enabled = true
 position = Vector2(240, 1704)
-cs_pos_1 = Vector2(0, 0)
-cs_pos_2 = Vector2(0, 0)
-cs_pos_3 = Vector2(0, 0)
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 modulate = Color(1, 1, 1, 0.196078)

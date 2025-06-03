@@ -35,13 +35,13 @@ func set_as_parent(_p : Node2D) -> void:
 func unparent_player(_p : Node2D) -> void:
 	_p.remove_child(player)
 
-func cutscene_walk(target):
+func cutscene_walk(walker,target):
 	if target == Vector2.ZERO:
 		return
-	player.StateMachine.ChangeState(player.walk_state)
-	var direction = player.global_position.direction_to(target.global_position)
-	player.direction = direction
-	player.velocity = player.walk_state.move_speed * direction
-	player.SetDirection()
-	player.UpdatedAnimation("walk")
+	walker.StateMachine.ChangeState(walker.walk_state)
+	var direction = walker.global_position.direction_to(target)
+	walker.direction = direction
+	walker.velocity = walker.walk_state.move_speed * direction
+	walker.SetDirection()
+	walker.UpdatedAnimation("walk")
 	pass

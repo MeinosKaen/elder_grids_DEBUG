@@ -31,14 +31,11 @@ func _ready():
 func _process(delta):
 	#direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	#direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	direction = Vector2(
-		Input.get_axis("left", "right"),
-		Input.get_axis("up", "down")
-	).normalized()
-	if target_position != Vector2.ZERO:
-		if self.global_position.distance_to(target_position) < 1:
-			target_position = Vector2.ZERO
-			StateMachine.ChangeState(idle_state)
+	if PlayerStats.player_context == "Exploration":
+		direction = Vector2(
+			Input.get_axis("left", "right"),
+			Input.get_axis("up", "down")
+		).normalized()
 	pass
 
 func _physics_process(delta: float):
@@ -127,5 +124,5 @@ func _on_dialogic_signal(command:String):
 		animation_player.play("idle_down")
 	if command == "mc_move1":
 		target_position = PlayerManager.cs_pos_1
-		PlayerManager.cutscene_walk(PlayerManager.cs_pos_1)
+		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_1)
 	return
