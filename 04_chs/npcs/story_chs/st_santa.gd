@@ -1,6 +1,6 @@
 @tool
 @icon("res://icons/05_NPCUnique.jpg")
-class_name NPCCutscene extends CharacterBody2D
+class_name NPC_Santa extends CharacterBody2D
 
 signal do_behaviour_enabled
 
@@ -66,12 +66,12 @@ func SetNPCResource(_npc:NPCResource) -> void:
 func _on_dialogic_signal(command:String):
 	if PlayerStats.player_context != "Cutscene":
 		return
-	if command == "X_turnleft":
+	if command == "santa_turnleft":
 		animation_player.play(state+"_left")
-	if command == "X_turnup":
+	if command == "santa_turnup":
 		animation_player.play(state+"_up")
-	if command == "X_turnright":
+	if command == "santa_turnright":
 		animation_player.play(state+"_right")
-	if command == "X_turndown":
+	if command == "santa_turndown":
 		animation_player.play(state+"_down")
 	return

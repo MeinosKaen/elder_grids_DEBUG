@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 signal player_damaged(hurtbox:Hurtbox)
-
+var some_velocity : float = 150.0
 var car_direction : Vector2 = Vector2.DOWN
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 var direction : Vector2 = Vector2.ZERO
@@ -46,6 +46,7 @@ func _input(event: InputEvent) -> void:
 			var current_scene = self.get_parent()
 			var main_menu = PlayerManager.MAINMENU.instantiate()
 			current_scene.add_child(main_menu)
+			return
 
 func SetDirection() -> bool:
 	if direction == Vector2.ZERO:
@@ -107,6 +108,8 @@ func _on_game_time_timer_timeout() -> void:
 		PlayerManager.game_time_minutes = 0
 
 func _on_dialogic_signal(command:String):
+	if PlayerStats.player_context != "Cutscene":
+		return
 	if command == "mc_turnleft":
 		animation_player.play("idle_left")
 	if command == "mc_turnup":

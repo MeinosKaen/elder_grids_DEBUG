@@ -1893,6 +1893,8 @@ texture_region_size = Vector2i(48, 48)
 35:38/0 = 0
 36:38/0 = 0
 37:38/0 = 0
+51:39/0 = 0
+50:39/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpakl"]
 texture = ExtResource("2_1ogu5")
@@ -5130,6 +5132,7 @@ terrain_set_0/terrain_2/name = "boxy_floors"
 terrain_set_0/terrain_2/color = Color(0.293065, 0.658726, 0.902271, 1)
 terrain_set_0/terrain_3/name = "shine_floor"
 terrain_set_0/terrain_3/color = Color(0.891257, 0.201528, 0.199034, 1)
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_1ogu5")
 sources/1 = SubResource("TileSetAtlasSource_dpakl")
 sources/2 = SubResource("TileSetAtlasSource_fujmw")

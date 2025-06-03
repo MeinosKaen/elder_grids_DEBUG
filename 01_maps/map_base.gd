@@ -15,7 +15,7 @@ func _ready() -> void:
 		AudioManager.play_bgs(BGS)
 	if Cutscene != null:
 		PlayerStats.DialogueFinished.connect(dialogue_finished)
-		PlayerStats.player_context = "Dialogue"
+		PlayerStats.player_context = "Cutscene"
 		Dialogic.start(Cutscene)
 
 func _free_level() -> void:

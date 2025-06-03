@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dekkexk6p2np6"]
 
-[ext_resource type="Script" uid="uid://ht3s0b068gus" path="res://04_chs/npcs/npc_cutscene.gd" id="1_loqbj"]
+[ext_resource type="Script" uid="uid://cuhqjcp3kc8ip" path="res://04_chs/npcs/story_chs/st_santa.gd" id="1_jwll4"]
 [ext_resource type="Texture2D" uid="uid://c7aywbswq2i6s" path="res://04_chs/npcs/spritesheets/ffb_trad2/old_woman.png" id="2_jwll4"]
 [ext_resource type="Script" uid="uid://dc0eoae8hgfr3" path="res://04_chs/npcs/npc_dialogue.gd" id="3_qb5be"]
 
@@ -169,8 +169,7 @@ collision_layer = 4096
 collision_mask = 261
 motion_mode = 1
 wall_min_slide_angle = 0.174533
-script = ExtResource("1_loqbj")
-fixed_position = "up"
+script = ExtResource("1_jwll4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(26, 36)
