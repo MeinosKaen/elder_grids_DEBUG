@@ -13,6 +13,9 @@ func _ready() -> void:
 		AudioManager.play_music(BGM)
 	if BGS != null:
 		AudioManager.play_bgs(BGS)
+	PlayerManager.cs_pos_1.x = 7*48
+	PlayerManager.cs_pos_1.y = 33*48
+	print(PlayerManager.cs_pos_1)
 	if Cutscene != null:
 		PlayerStats.DialogueFinished.connect(dialogue_finished)
 		PlayerStats.player_context = "Cutscene"

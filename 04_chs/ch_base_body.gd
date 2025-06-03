@@ -14,6 +14,9 @@ var invulnerable : bool = false
 @onready var hitbox: Hitbox = $Interactions/Hitbox
 @onready var game_time_timer: Timer = $game_time_timer
 @onready var post_process_node: CanvasLayer = $PostProcess
+@onready var walk_state: State_Walk = $StateMachine/Walk
+@onready var idle_state: State_Idle = $StateMachine/Idle
+var target_position : Vector2 = Vector2.ZERO
 
 signal DirectionChanged(new_direction:Vector2)
 
@@ -32,6 +35,10 @@ func _process(delta):
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	).normalized()
+	if target_position != Vector2.ZERO:
+		if self.global_position.distance_to(target_position) < 1:
+			target_position = Vector2.ZERO
+			StateMachine.ChangeState(idle_state)
 	pass
 
 func _physics_process(delta: float):
@@ -118,4 +125,7 @@ func _on_dialogic_signal(command:String):
 		animation_player.play("idle_right")
 	if command == "mc_turndown":
 		animation_player.play("idle_down")
+	if command == "mc_move1":
+		target_position = PlayerManager.cs_pos_1
+		PlayerManager.cutscene_walk(PlayerManager.cs_pos_1)
 	return

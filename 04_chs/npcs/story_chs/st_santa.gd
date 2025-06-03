@@ -16,6 +16,10 @@ var do_behaviour: bool = true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 
+@export var cs_pos_1 : Vector2 = Vector2.ZERO
+@export var cs_pos_2 : Vector2 = Vector2.ZERO
+@export var cs_pos_3 : Vector2 = Vector2.ZERO
+
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	SetupNPC()

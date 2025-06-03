@@ -66,6 +66,7 @@ jump answer02_continued
 label answer02_continued
 Santa: Either way, returning to my original request\:[pause=0.15] as we're about to arrive, please make one last round to check on our scattered students in this compartment.
 [signal arg="santa_turnup"]
+[signal arg="mc_move1"]
 Santa: They'd best prepare for customs and get rid of anything [i]untoward[/i] before we land.[pause=0.15] I'm sure the ones we missed will have let down their guards, by now.
 set {PlayerStats.player_context} = "Exploration"
 [end_timeline]
