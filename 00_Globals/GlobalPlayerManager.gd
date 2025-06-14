@@ -48,6 +48,9 @@ func dialogue_start(resource: DialogueResource, title: String = "", extra_game_s
 	
 	return balloon_scene
 
+func dialogue_finished():
+	PlayerStats.player_context = "Exploration"
+
 func cutscene_walk(walker,target):
 	if target == Vector2.ZERO:
 		return

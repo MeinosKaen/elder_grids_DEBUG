@@ -42,7 +42,7 @@ var mutation_cooldown: Timer = Timer.new()
 ## The base balloon anchor
 @onready var balloon: Control = %Balloon
 
-## The speaking character's portrait
+## The portrait of the speaker character
 @onready var portrait: TextureRect = %Portrait
 
 ## The label showing the name of the currently speaking character
@@ -98,13 +98,16 @@ func apply_dialogue_line() -> void:
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 
-	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = tr(dialogue_line.character, "dialogue")
-	var portrait_path: String = "res://05_story/dialogue_characters/dialogue_portraits/00_%s.jpg" % dialogue_line.character
+	var portrait_path: String = "res://05_story/dialogue_characters/dialogue_portraits/%s.jpg" % dialogue_line.character
 	if ResourceLoader.exists(portrait_path):
+		portrait.visible = true
 		portrait.texture = load(portrait_path)
 	else:
+		portrait.visible = false
 		portrait.texture = null
+
+	character_label.visible = not dialogue_line.character.is_empty()
+	character_label.text = tr(dialogue_line.character, "dialogue")
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

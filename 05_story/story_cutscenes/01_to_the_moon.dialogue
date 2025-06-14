@@ -1,5 +1,5 @@
 ~ start
-do PlayerManager.cutscene_signal.emit("santa_turnup")
+do PlayerManager.cutscene_signal.emit("santa_turnleft")
 do PlayerManager.cutscene_signal.emit("mc_turnleft")
 [b]Ticket to Ride:[/b][wait=0.5] Neo Brussels Spaceport to Selene Spaceport 01, 09:30-15:30
 Please insert your full name.
@@ -36,16 +36,16 @@ Santa: And with each year, each new batch of students, I lost a little bit more 
 do PlayerManager.cutscene_signal.emit("santa_turnleft")
 Santa: Visiting the Selene Moon Colony?[wait=0.3] It's the twenty-fifth time, for me.[wait=0.3] It's been turned into yet another chore...
 - Think of it as an anniversary in a storied career.
-    set PlayerStats.magician_type += 1
+	set PlayerStats.magician_type += 1
 	=> answer02_A
 - Maybe this time it will be different!
-    set PlayerStats.gambler_type += 1
+	set PlayerStats.gambler_type += 1
 	=> answer02_B
 - And yet you bear with it for their benefit.
-    set PlayerStats.tank_type += 1
+	set PlayerStats.tank_type += 1
 	=> answer02_C
 - There are worse places to visit that often.
-    set PlayerStats.balanced_type += 1
+	set PlayerStats.balanced_type += 1
 	=> answer02_D
 
 ~ answer02_A
@@ -66,5 +66,5 @@ do PlayerManager.cutscene_signal.emit("santa_turnup")
 Santa: Either way, returning to my original request:[wait=0.15] as we're about to arrive, please make one last round to check on our scattered students in this compartment.
 do PlayerManager.cutscene_signal.emit("mc_move1")
 Santa: They'd best prepare for customs and get rid of anything [i]untoward[/i] before we land.[wait=0.15] I'm sure the ones we missed will have let down their guards, by now.
-do dialogue_node.dialogue_finished()
+do PlayerManager.dialogue_finished()
 => END
