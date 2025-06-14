@@ -39,7 +39,7 @@ func _process(delta):
 	pass
 
 func _physics_process(delta: float):
-	if not PlayerStats.player_context == "Exploration":
+	if PlayerStats.player_context != "Exploration" and PlayerStats.player_context != "CS_Sensei_Move":
 		return
 	move_and_slide()
 

@@ -60,4 +60,7 @@ func cutscene_walk(walker,target):
 	walker.velocity = walker.walk_state.move_speed * direction
 	walker.SetDirection()
 	walker.UpdatedAnimation("walk")
+	await walker.global_position == target
+	walker.StateMachine.ChangeState(walker.idle_state)
+	PlayerStats.player_context = "Cutscene"
 	pass

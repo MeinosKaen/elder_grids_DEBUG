@@ -64,6 +64,7 @@ Santa: Perhaps.[wait=0.3] But I fear that accompanying these brats would turn ev
 ~ answer02_continued
 do PlayerManager.cutscene_signal.emit("santa_turnup")
 Santa: Either way, returning to my original request:[wait=0.15] as we're about to arrive, please make one last round to check on our scattered students in this compartment.
+set PlayerStats.player_context = "CS_Sensei_Move"
 do PlayerManager.cutscene_signal.emit("mc_move1")
 Santa: They'd best prepare for customs and get rid of anything [i]untoward[/i] before we land.[wait=0.15] I'm sure the ones we missed will have let down their guards, by now.
 do PlayerManager.dialogue_finished()
