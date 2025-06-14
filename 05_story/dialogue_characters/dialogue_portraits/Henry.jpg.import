@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duv4ppyceqmov"
-path="res://.godot/imported/03_HenryPark.jpg-7c739eb96563845426a570fd7561a33f.ctex"
+path="res://.godot/imported/Henry.jpg-cc1f557b8efdb5d95af595148079d1d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://05_story/dialogic_characters/dialogic_portraits/03_HenryPark.jpg"
-dest_files=["res://.godot/imported/03_HenryPark.jpg-7c739eb96563845426a570fd7561a33f.ctex"]
+source_file="res://05_story/dialogue_characters/dialogue_portraits/Henry.jpg"
+dest_files=["res://.godot/imported/Henry.jpg-cc1f557b8efdb5d95af595148079d1d8.ctex"]
 
 [params]
 

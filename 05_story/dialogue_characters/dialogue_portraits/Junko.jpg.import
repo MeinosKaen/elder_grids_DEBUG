@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2wdn2ytyirlq"
-path="res://.godot/imported/01_SantaMontanari.jpg-1ade063efaadfe0b159547dda3469e8d.ctex"
+uid="uid://bym8lynu8pdb"
+path="res://.godot/imported/Junko.jpg-9b97c0ac910cc1fbef00f8c89500ac93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://05_story/dialogic_characters/dialogic_portraits/01_SantaMontanari.jpg"
-dest_files=["res://.godot/imported/01_SantaMontanari.jpg-1ade063efaadfe0b159547dda3469e8d.ctex"]
+source_file="res://05_story/dialogue_characters/dialogue_portraits/Junko.jpg"
+dest_files=["res://.godot/imported/Junko.jpg-9b97c0ac910cc1fbef00f8c89500ac93.ctex"]
 
 [params]
 

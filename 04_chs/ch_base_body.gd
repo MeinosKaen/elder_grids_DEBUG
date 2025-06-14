@@ -125,4 +125,10 @@ func _on_cutscene_signal(command:String):
 	if command == "mc_move1":
 		target_position = PlayerManager.cs_pos_1
 		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_1)
+	if command == "mc_move2":
+		target_position = PlayerManager.cs_pos_2
+		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_2)
+	if command == "mc_move3":
+		target_position = PlayerManager.cs_pos_3
+		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_3)
 	return

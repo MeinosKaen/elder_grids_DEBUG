@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cy10w14qruilr"
+path="res://.godot/imported/01_to_the_moon.dialogue-3a3dd836387376419b00a6935e93029c.tres"
+
+[deps]
+
+source_file="res://05_story/story_cutscenes/01_to_the_moon.dialogue"
+dest_files=["res://.godot/imported/01_to_the_moon.dialogue-3a3dd836387376419b00a6935e93029c.tres"]
+
+[params]
+
+defaults=true

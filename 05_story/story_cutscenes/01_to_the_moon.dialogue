@@ -1,0 +1,70 @@
+~ start
+do PlayerManager.cutscene_signal.emit("santa_turnup")
+do PlayerManager.cutscene_signal.emit("mc_turnleft")
+[b]Ticket to Ride:[/b][wait=0.5] Neo Brussels Spaceport to Selene Spaceport 01, 09:30-15:30
+Please insert your full name.
+##TEXT INPUT
+
+~ st01_awakening
+Santa: ...{{PlayerStats.last_name}}?[wait=0.5] Professor {{PlayerStats.last_name}}!
+do PlayerManager.cutscene_signal.emit("mc_surprise")
+[next=1.0]
+do PlayerManager.cutscene_signal.emit("mc_turnright")
+[next=1.0]
+Santa: Is the vast void of space smearing past us at twice the speed of sound really that interesting to you, Professor?
+Santa: You're almost as excited as the students.
+- I have been looking forward to this!
+	set PlayerStats.ranged_type += 1
+	=> answer01
+- It's a new experience. Who knows what awaits.
+	set PlayerStats.gambler_type += 1
+	=> answer01
+- We deserve a reward after finals, too.
+	set PlayerStats.tank_type += 1
+	=> answer01
+- I mean... It's the moon colony.
+	set PlayerStats.balanced_type += 1
+	=> answer01
+
+~ answer01
+Santa: ...I forget, there's not that many years that separate you from them, are there?[wait=0.3] You're barely a decade their senior.
+do PlayerManager.cutscene_signal.emit("santa_turnup")
+Santa: Thus, you still share that wide-eyed wonder at much of the world...[wait=0.3] Life hasn't beaten that out of you yet.
+do PlayerManager.cutscene_signal.emit("mc_question")
+Santa: .[wait=0.15].[wait=0.15].[wait=0.3] Twenty-five years I have taught at this school.[wait=0.3] First as a simple Professor, just like you.[wait=0.3] Then as Vice-Headmaster, then Headmaster...
+Santa: And with each year, each new batch of students, I lost a little bit more of passion for the role.[wait=0.3] In equal measure as the students lost drive and respect.
+do PlayerManager.cutscene_signal.emit("santa_turnleft")
+Santa: Visiting the Selene Moon Colony?[wait=0.3] It's the twenty-fifth time, for me.[wait=0.3] It's been turned into yet another chore...
+- Think of it as an anniversary in a storied career.
+    set PlayerStats.magician_type += 1
+	=> answer02_A
+- Maybe this time it will be different!
+    set PlayerStats.gambler_type += 1
+	=> answer02_B
+- And yet you bear with it for their benefit.
+    set PlayerStats.tank_type += 1
+	=> answer02_C
+- There are worse places to visit that often.
+    set PlayerStats.balanced_type += 1
+	=> answer02_D
+
+~ answer02_A
+Santa: Storied?[wait=0.15] Most definitely.[wait=0.3] But there's nothing about this anniversary that I see worth celebrating.
+=> answer02_continued
+~ answer02_B
+Santa: I see nothing substantially different in the trip, program or company to warrant such newfound optimism, Professor...
+=> answer02_continued
+~ answer02_C
+Santa: Their benefit?[wait=0.3] Hardly.[wait=0.3] I do it because it is my job.[wait=0.3] I've been nothing but an educator for my entire life.
+=> answer02_continued
+~ answer02_D
+Santa: Perhaps.[wait=0.3] But I fear that accompanying these brats would turn even visiting mighty heaven into a chore.
+=> answer02_continued
+
+~ answer02_continued
+do PlayerManager.cutscene_signal.emit("santa_turnup")
+Santa: Either way, returning to my original request:[wait=0.15] as we're about to arrive, please make one last round to check on our scattered students in this compartment.
+do PlayerManager.cutscene_signal.emit("mc_move1")
+Santa: They'd best prepare for customs and get rid of anything [i]untoward[/i] before we land.[wait=0.15] I'm sure the ones we missed will have let down their guards, by now.
+do dialogue_node.dialogue_finished()
+=> END

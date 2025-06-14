@@ -1,25 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://fl2h1bs3saub"]
+[gd_scene load_steps=18 format=3 uid="uid://fl2h1bs3saub"]
 
 [ext_resource type="Texture2D" uid="uid://fj3i8wo8odmy" path="res://08_CGs/textures/texture_BLUMOTES.jpg" id="1_4gsl1"]
 [ext_resource type="Script" uid="uid://8hsltlvquny8" path="res://06_GUI/menus/main_menu.gd" id="1_ooy3y"]
 [ext_resource type="Theme" uid="uid://bvekati27w6s1" path="res://06_GUI/themes/menu_theme.tres" id="2_1p1rb"]
+[ext_resource type="Theme" uid="uid://dtmv8ivrpnjdp" path="res://06_GUI/themes/scifi_theme/scifi.tres" id="2_d2htn"]
 [ext_resource type="Texture2D" uid="uid://0f1cvygiyspj" path="res://icons/06_money.png" id="3_agvha"]
+[ext_resource type="StyleBox" uid="uid://cfxmqcrah382i" path="res://06_GUI/themes/scifi_theme/scifi_flat_box_style.tres" id="4_l6bdx"]
 [ext_resource type="Texture2D" uid="uid://bqbnrq5xno6ok" path="res://icons/07_time.png" id="5_vk4wj"]
 [ext_resource type="Script" uid="uid://i2qnw13oqshj" path="res://06_GUI/menus/topics_sub.gd" id="6_frd2m"]
 [ext_resource type="Script" uid="uid://8teneu5qsc4v" path="res://06_GUI/menus/sub_menus.gd" id="6_r70ip"]
 [ext_resource type="Script" uid="uid://bhe6wjaun7wla" path="res://06_GUI/menus/hand_icon.gd" id="8_40hks"]
 [ext_resource type="Texture2D" uid="uid://c43f1dfhevkx1" path="res://06_GUI/kenney_hand_cursor_border.png" id="8_r70ip"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gsl1"]
-bg_color = Color(0, 0, 0, 0.490196)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 3
-border_width_bottom = 3
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p1rb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -70,6 +61,7 @@ script = ExtResource("1_ooy3y")
 modulate = Color(1, 1, 1, 0.490196)
 offset_right = 1920.0
 offset_bottom = 1080.0
+theme = ExtResource("2_d2htn")
 texture = ExtResource("1_4gsl1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -77,16 +69,18 @@ offset_left = 24.0
 offset_top = 24.0
 offset_right = 1896.0
 offset_bottom = 1056.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_4gsl1")
+theme = ExtResource("2_d2htn")
+theme_override_styles/panel = ExtResource("4_l6bdx")
 
 [node name="MONEY_TIME" type="HBoxContainer" parent="."]
 layout_direction = 2
 offset_left = 72.0
-offset_top = 960.0
-offset_right = 404.0
-offset_bottom = 1035.0
+offset_top = 945.0
+offset_right = 492.0
+offset_bottom = 1020.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme = ExtResource("2_d2htn")
 theme_override_constants/separation = 25
 
 [node name="money_box" type="HBoxContainer" parent="MONEY_TIME"]
@@ -144,6 +138,7 @@ offset_left = 72.0
 offset_top = 72.0
 offset_right = 576.0
 offset_bottom = 243.0
+theme = ExtResource("2_d2htn")
 
 [node name="name_label" type="RichTextLabel" parent="NAME_LVL"]
 layout_mode = 2
@@ -218,6 +213,7 @@ offset_right = 480.0
 offset_bottom = 432.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("2_d2htn")
 theme_override_constants/separation = 16
 
 [node name="HP_STUFF" type="HBoxContainer" parent="HP_MP_STM"]
@@ -310,6 +306,7 @@ offset_right = 576.0
 offset_bottom = 720.0
 size_flags_horizontal = 2
 size_flags_vertical = 6
+theme = ExtResource("2_d2htn")
 
 [node name="vigor_box" type="HBoxContainer" parent="stats_container"]
 layout_mode = 2
@@ -455,6 +452,7 @@ offset_top = 72.0
 offset_right = 1848.0
 offset_bottom = 600.0
 size_flags_vertical = 2
+theme = ExtResource("2_d2htn")
 theme_override_constants/separation = 10
 alignment = 2
 script = ExtResource("6_r70ip")
@@ -466,14 +464,14 @@ size_flags_vertical = 3
 
 [node name="StatusButton" type="Button" parent="SubMenus/Status_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="StatusText" type="RichTextLabel" parent="SubMenus/Status_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -489,14 +487,14 @@ size_flags_vertical = 3
 
 [node name="EquipButton" type="Button" parent="SubMenus/Equip_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="EquipText" type="RichTextLabel" parent="SubMenus/Equip_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -512,14 +510,14 @@ size_flags_vertical = 3
 
 [node name="ItemsButton" type="Button" parent="SubMenus/Items_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="ItemsText" type="RichTextLabel" parent="SubMenus/Items_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -535,14 +533,14 @@ size_flags_vertical = 3
 
 [node name="TopicsButton" type="Button" parent="SubMenus/Topics_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="TopicsText" type="RichTextLabel" parent="SubMenus/Topics_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -558,14 +556,14 @@ size_flags_vertical = 3
 
 [node name="CRTButton" type="Button" parent="SubMenus/CRT_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="CRTText" type="RichTextLabel" parent="SubMenus/CRT_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -581,14 +579,14 @@ size_flags_vertical = 3
 
 [node name="SaveButton" type="Button" parent="SubMenus/Save_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="SaveText" type="RichTextLabel" parent="SubMenus/Save_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -604,14 +602,14 @@ size_flags_vertical = 3
 
 [node name="LoadButton" type="Button" parent="SubMenus/Load_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="LoadText" type="RichTextLabel" parent="SubMenus/Load_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -627,14 +625,14 @@ size_flags_vertical = 3
 
 [node name="CloseButton" type="Button" parent="SubMenus/Close_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="CloseText" type="RichTextLabel" parent="SubMenus/Close_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")
@@ -650,14 +648,14 @@ size_flags_vertical = 3
 
 [node name="ExitButton" type="Button" parent="SubMenus/ExitGame_Button"]
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
-theme = ExtResource("2_1p1rb")
+theme = ExtResource("2_d2htn")
 
 [node name="ExitText" type="RichTextLabel" parent="SubMenus/ExitGame_Button"]
 process_mode = 4
 layout_mode = 0
-offset_right = 235.0
+offset_right = 245.0
 offset_bottom = 65.0
 mouse_filter = 2
 theme = ExtResource("2_1p1rb")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bym8lynu8pdb"
-path="res://.godot/imported/02_JunkoIto.jpg-f3f91bc2705a53ada98255e0b4a06bc9.ctex"
+uid="uid://8ud5qpuxvrlq"
+path="res://.godot/imported/Sensei.jpg-a115ea615fdc0a4e457a496e20856e37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://05_story/dialogic_characters/dialogic_portraits/02_JunkoIto.jpg"
-dest_files=["res://.godot/imported/02_JunkoIto.jpg-f3f91bc2705a53ada98255e0b4a06bc9.ctex"]
+source_file="res://05_story/dialogue_characters/dialogue_portraits/Sensei.jpg"
+dest_files=["res://.godot/imported/Sensei.jpg-a115ea615fdc0a4e457a496e20856e37.ctex"]
 
 [params]
 

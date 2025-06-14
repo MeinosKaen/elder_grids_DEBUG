@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3kdwj51k36b6"
-path="res://.godot/imported/06_CesareKohl.jpg-aedb45fe07930dad599b2b64e5b4e0b6.ctex"
+uid="uid://dq8s4apdfp7gm"
+path="res://.godot/imported/xolonium.png-96bdf7f1e1c8439a0caa8eb9b6667bb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://05_story/dialogic_characters/dialogic_portraits/06_CesareKohl.jpg"
-dest_files=["res://.godot/imported/06_CesareKohl.jpg-aedb45fe07930dad599b2b64e5b4e0b6.ctex"]
+source_file="res://06_GUI/themes/scifi_theme/xolonium/xolonium.png"
+dest_files=["res://.godot/imported/xolonium.png-96bdf7f1e1c8439a0caa8eb9b6667bb5.ctex"]
 
 [params]
 

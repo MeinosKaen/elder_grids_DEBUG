@@ -17,9 +17,9 @@ func _ready() -> void:
 	PlayerManager.cs_pos_1.y = 33*48
 	if Cutscene != null:
 		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_1)
-		#PlayerStats.DialogueFinished.connect(dialogue_finished)
-		#PlayerStats.player_context = "Cutscene"
-		#Dialogic.start(Cutscene)
+		PlayerStats.DialogueFinished.connect(dialogue_finished)
+		PlayerStats.player_context = "Cutscene"
+		PlayerManager.dialogue_start(Cutscene)
 
 func _free_level() -> void:
 	PlayerManager.unparent_player(self)

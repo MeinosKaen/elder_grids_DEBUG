@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dplhrw4saj40g"]
+[gd_scene load_steps=39 format=4 uid="uid://dplhrw4saj40g"]
 
 [ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://01_maps/LevelTilemapBase.gd" id="1_nvvo7"]
 [ext_resource type="Script" uid="uid://bi41tp0kwemwc" path="res://01_maps/map_base.gd" id="1_v8yeq"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://b5fhjosmak0jg" path="res://01_maps/01_tilesets/01_future/spaceship_tiles.tres" id="2_y06t2"]
 [ext_resource type="TileSet" uid="uid://d1kr24o56p3t1" path="res://01_maps/01_tilesets/01_future/spaceship_tiles_24.tres" id="3_8ntpf"]
 [ext_resource type="AudioStream" uid="uid://dyjxaykkhax1y" path="res://02_audio/bgs/ellr_Spaceship_Interior.ogg" id="3_b3qmc"]
+[ext_resource type="Resource" uid="uid://cy10w14qruilr" path="res://05_story/story_cutscenes/01_to_the_moon.dialogue" id="4_vcgy0"]
 [ext_resource type="PackedScene" uid="uid://dtr22df8mlxdx" path="res://01_maps/debug_maps/player_spawn.tscn" id="5_tf6gs"]
 [ext_resource type="Texture2D" uid="uid://x03ktnf22msi" path="res://08_CGs/parallaxes/parallax_Universe.png" id="6_v8yeq"]
 [ext_resource type="Texture2D" uid="uid://d27go364a4urp" path="res://08_CGs/textures/texture_GLASS.png" id="7_2p3sb"]
@@ -379,6 +380,7 @@ y_sort_enabled = true
 script = ExtResource("1_v8yeq")
 BGM = ExtResource("2_b3qmc")
 BGS = ExtResource("3_b3qmc")
+Cutscene = ExtResource("4_vcgy0")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -3
@@ -651,7 +653,6 @@ position = Vector2(624, 1704)
 fixed_position = "up"
 
 [node name="Santa Montanari" parent="NPCS" instance=ExtResource("15_foivq")]
-y_sort_enabled = true
 position = Vector2(240, 1704)
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]

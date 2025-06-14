@@ -21,11 +21,11 @@ var do_behaviour: bool = true
 @export var cs_pos_3 : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	PlayerManager.cutscene_signal.connect(_on_cutscene_signal)
 	SetupNPC()
 	if Engine.is_editor_hint():
 		return
 	do_behaviour_enabled.emit()
+	PlayerManager.cutscene_signal.connect(_on_cutscene_signal)
 	pass
 
 func _physics_process(delta: float) -> void:
