@@ -52,15 +52,12 @@ func dialogue_finished():
 	PlayerStats.player_context = "Exploration"
 
 func cutscene_walk(walker,target):
-	if target == Vector2.ZERO:
-		return
-	walker.StateMachine.ChangeState(walker.walk_state)
 	var direction = walker.global_position.direction_to(target)
-	walker.direction = direction
+	walker.target_position = target
+	walker.direction = walker.global_position.direction_to(target)
 	walker.velocity = walker.walk_state.move_speed * direction
+	walker.StateMachine.ChangeState(walker.walk_state)
 	walker.SetDirection()
+	print("Let's update the animation.")
 	walker.UpdatedAnimation("walk")
-	await walker.global_position == target
-	walker.StateMachine.ChangeState(walker.idle_state)
-	PlayerStats.player_context = "Cutscene"
 	pass

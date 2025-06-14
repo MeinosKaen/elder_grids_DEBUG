@@ -5,6 +5,7 @@ var first_name : String = "Nanni"
 var last_name : String = "Nella"
 var background : String = "Tony Award Winner"
 var player_context : String = "Exploration"
+var player_animation : bool = false
 var current_money : int = 0
 
 #LvLing Info

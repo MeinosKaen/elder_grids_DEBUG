@@ -13,8 +13,8 @@ func _ready() -> void:
 		AudioManager.play_music(BGM)
 	if BGS != null:
 		AudioManager.play_bgs(BGS)
-	PlayerManager.cs_pos_1.x = 7*48
-	PlayerManager.cs_pos_1.y = 33*48
+	PlayerManager.cs_pos_1.x = $CS1_SENSEI_POS.global_position.x
+	PlayerManager.cs_pos_1.y = $CS1_SENSEI_POS.global_position.y
 	if Cutscene != null:
 		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_1)
 		PlayerStats.DialogueFinished.connect(dialogue_finished)

@@ -39,7 +39,14 @@ func _process(delta):
 	pass
 
 func _physics_process(delta: float):
-	if PlayerStats.player_context != "Exploration" and PlayerStats.player_context != "CS_Sensei_Move":
+	if PlayerStats.player_context == "CS_Sensei_Move":
+		if self.global_position.distance_to(target_position) < 1:
+			StateMachine.ChangeState(idle_state)
+			target_position = Vector2.ZERO
+			PlayerStats.player_context = "Cutscene"
+		else:
+			move_and_slide()
+	if not PlayerStats.player_context == "Exploration":
 		return
 	move_and_slide()
 
@@ -61,22 +68,28 @@ func SetDirection() -> bool:
 		return false
 	car_direction = new_direction
 	DirectionChanged.emit(new_direction)
+	print("The direction has changed.")
 	return true
 	
 func UpdatedAnimation(state : String) -> void:
-	if not PlayerStats.player_context == "Exploration":
+	if PlayerStats.player_context != "Exploration" and PlayerStats.player_context != "CS_Sensei_Move":
 		return
+	print("We're playing the animation.")
 	animation_player.play(state + "_" + AnimDirection())
 	pass
 	
 func AnimDirection():
 	if car_direction == Vector2.DOWN:
+		print("DIR DOWN")
 		return "down"
 	elif car_direction == Vector2.UP:
+		print("DIR UP")
 		return "up"
 	elif car_direction == Vector2.LEFT:
+		print("DIR LEFT")
 		return "left"
 	elif car_direction == Vector2.RIGHT:
+		print("DIR RIGHT")
 		return "right"
 
 func TakeDamage(hurtbox:Hurtbox) -> void:
@@ -123,12 +136,15 @@ func _on_cutscene_signal(command:String):
 	if command == "mc_turndown":
 		animation_player.play("idle_down")
 	if command == "mc_move1":
+		PlayerStats.player_context = "CS_Sensei_Move"
 		target_position = PlayerManager.cs_pos_1
 		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_1)
 	if command == "mc_move2":
+		PlayerStats.player_context = "CS_Sensei_Move"
 		target_position = PlayerManager.cs_pos_2
 		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_2)
 	if command == "mc_move3":
+		PlayerStats.player_context = "CS_Sensei_Move"
 		target_position = PlayerManager.cs_pos_3
 		PlayerManager.cutscene_walk(PlayerManager.player,PlayerManager.cs_pos_3)
 	return

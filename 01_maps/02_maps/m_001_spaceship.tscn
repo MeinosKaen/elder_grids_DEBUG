@@ -666,3 +666,6 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
 position = Vector2(408, 408)
 texture = ExtResource("6_v8yeq")
+
+[node name="CS1_SENSEI_POS" type="Marker2D" parent="."]
+position = Vector2(312, 1656)
