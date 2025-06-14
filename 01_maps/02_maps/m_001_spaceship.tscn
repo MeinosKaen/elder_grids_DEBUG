@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://dplhrw4saj40g"]
+[gd_scene load_steps=38 format=4 uid="uid://dplhrw4saj40g"]
 
 [ext_resource type="Script" uid="uid://d0w3hqcqwfe71" path="res://01_maps/LevelTilemapBase.gd" id="1_nvvo7"]
 [ext_resource type="Script" uid="uid://bi41tp0kwemwc" path="res://01_maps/map_base.gd" id="1_v8yeq"]
@@ -6,15 +6,12 @@
 [ext_resource type="TileSet" uid="uid://b5fhjosmak0jg" path="res://01_maps/01_tilesets/01_future/spaceship_tiles.tres" id="2_y06t2"]
 [ext_resource type="TileSet" uid="uid://d1kr24o56p3t1" path="res://01_maps/01_tilesets/01_future/spaceship_tiles_24.tres" id="3_8ntpf"]
 [ext_resource type="AudioStream" uid="uid://dyjxaykkhax1y" path="res://02_audio/bgs/ellr_Spaceship_Interior.ogg" id="3_b3qmc"]
-[ext_resource type="Resource" uid="uid://7v5qynfdreuc" path="res://05_story/story_timelines/st01_tickettoride.dtl" id="4_kst3o"]
 [ext_resource type="PackedScene" uid="uid://dtr22df8mlxdx" path="res://01_maps/debug_maps/player_spawn.tscn" id="5_tf6gs"]
 [ext_resource type="Texture2D" uid="uid://x03ktnf22msi" path="res://08_CGs/parallaxes/parallax_Universe.png" id="6_v8yeq"]
 [ext_resource type="Texture2D" uid="uid://d27go364a4urp" path="res://08_CGs/textures/texture_GLASS.png" id="7_2p3sb"]
 [ext_resource type="PackedScene" uid="uid://wq6rdykglfka" path="res://04_chs/npcs/npc_randomizer.tscn" id="10_0j7eo"]
-[ext_resource type="Resource" uid="uid://bc22fqhf1aafu" path="res://05_story/test_timeline.dtl" id="11_jcsqw"]
 [ext_resource type="Script" uid="uid://or6oku1sr7en" path="res://04_chs/npcs/npc_resource.gd" id="11_wm48w"]
 [ext_resource type="PackedScene" uid="uid://eqrou1gwsj47" path="res://04_chs/npcs/npc_unique.tscn" id="12_0yt0u"]
-[ext_resource type="Resource" uid="uid://dv4mnhvml1oo" path="res://03_gameplay/01_topics/base_topics.dtl" id="12_vcgy0"]
 [ext_resource type="PackedScene" uid="uid://dekkexk6p2np6" path="res://04_chs/npcs/story_chs/st_Santa.tscn" id="15_foivq"]
 
 [sub_resource type="Resource" id="Resource_vcgy0"]
@@ -382,7 +379,6 @@ y_sort_enabled = true
 script = ExtResource("1_v8yeq")
 BGM = ExtResource("2_b3qmc")
 BGS = ExtResource("3_b3qmc")
-Cutscene = ExtResource("4_kst3o")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -3
@@ -485,7 +481,6 @@ y_sort_enabled = true
 y_sort_enabled = true
 position = Vector2(384, 1704)
 npc_resource = SubResource("Resource_vcgy0")
-dialogue_script = ExtResource("12_vcgy0")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -493,7 +488,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(144, 1560)
 npc_resource = SubResource("Resource_foivq")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -501,7 +495,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(192, 1560)
 npc_resource = SubResource("Resource_kst3o")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Trad1_men"
 fixed_position = "up"
 
@@ -509,7 +502,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(240, 1560)
 npc_resource = SubResource("Resource_astyc")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -517,7 +509,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(384, 1560)
 npc_resource = SubResource("Resource_5403e")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -525,7 +516,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(672, 1416)
 npc_resource = SubResource("Resource_bv7mn")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -533,7 +523,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(960, 1416)
 npc_resource = SubResource("Resource_p4sx1")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -541,7 +530,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(432, 1128)
 npc_resource = SubResource("Resource_sosol")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -549,7 +537,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(192, 1272)
 npc_resource = SubResource("Resource_yooly")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -557,7 +544,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(672, 840)
 npc_resource = SubResource("Resource_tgeiy")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -565,7 +551,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(864, 840)
 npc_resource = SubResource("Resource_aposm")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -573,7 +558,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(912, 696)
 npc_resource = SubResource("Resource_jpbyi")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -581,7 +565,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(720, 696)
 npc_resource = SubResource("Resource_5h1ky")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -589,7 +572,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(240, 696)
 npc_resource = SubResource("Resource_ud1fr")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -597,7 +579,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(240, 120)
 npc_resource = SubResource("Resource_bwxg3")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 
@@ -605,7 +586,6 @@ fixed_position = "up"
 y_sort_enabled = true
 position = Vector2(672, 408)
 npc_resource = SubResource("Resource_jh0wu")
-dialogue_script = ExtResource("11_jcsqw")
 npc_group = "Modern1"
 fixed_position = "up"
 

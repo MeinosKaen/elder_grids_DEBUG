@@ -6,9 +6,13 @@ var player : Player
 var player_spawned : bool = false
 var last_npc_touched : Node2D = null
 
+#Cutscene Variables and Signals
 var cs_pos_1 : Vector2 = Vector2.ZERO
 var cs_pos_2 : Vector2 = Vector2.ZERO
 var cs_pos_3 : Vector2 = Vector2.ZERO
+
+signal cutscene_signal()
+
 
 ##Time Measurement Variables
 var game_time_seconds : int = 0
@@ -34,6 +38,15 @@ func set_as_parent(_p : Node2D) -> void:
 	_p.add_child(player)
 func unparent_player(_p : Node2D) -> void:
 	_p.remove_child(player)
+
+func dialogue_start(resource: DialogueResource, title: String = "", extra_game_states : Array =[]):
+	PlayerStats.player_context = "Cutscene"
+	var balloon: Node = load(DialogueManager._get_example_balloon_path()).instatiate()
+	DialogueManager.get_current_scene.call().add_child(balloon)
+	balloon.start(resource,title,extra_game_states)
+	DialogueManager.dialogue_started.emit(resource)
+	
+	return balloon
 
 func cutscene_walk(walker,target):
 	if target == Vector2.ZERO:

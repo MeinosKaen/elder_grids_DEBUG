@@ -25,7 +25,7 @@ func _ready():
 	StateMachine.Initialize(self)
 	hitbox.Damaged.connect(TakeDamage)
 	game_time_timer.start()
-	Dialogic.signal_event.connect(_on_dialogic_signal)
+	PlayerManager.cutscene_signal.connect(_on_cutscene_signal)
 	pass
 	
 func _process(delta):
@@ -111,7 +111,7 @@ func _on_game_time_timer_timeout() -> void:
 		PlayerManager.game_time_hours += 1
 		PlayerManager.game_time_minutes = 0
 
-func _on_dialogic_signal(command:String):
+func _on_cutscene_signal(command:String):
 	if PlayerStats.player_context != "Cutscene":
 		return
 	if command == "mc_turnleft":

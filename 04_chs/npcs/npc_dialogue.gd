@@ -28,10 +28,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			npc.velocity = Vector2.ZERO
 			npc.UpdateAnimation()
 			npc.do_behaviour = false
-			Dialogic.start(npc.dialogue_script)
+			DialogueManager.dialogue_start(npc.dialogue_script)
 			
 func dialogue_finished() -> void:
-	Dialogic.end_timeline()
 	npc.state = "idle"
 	npc.UpdateAnimation()
 	npc.do_behaviour = true

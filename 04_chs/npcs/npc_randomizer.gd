@@ -10,7 +10,7 @@ var direction_name : String = "down"
 var do_behaviour: bool = true
 
 @export var npc_resource : NPCResource : set = SetNPCResource
-@export var dialogue_script : DialogicTimeline = null
+@export var dialogue_script : DialogueResource = null
 @export_enum("Children", "Trad1_men", "Trad1_women", "Trad2_men", "Trad2_women", "Modern1", "Modern2") var npc_group : String = "None"
 @export_enum("up", "left", "right", "down", "None") var fixed_position : String = "None"
 

@@ -10,7 +10,7 @@ var direction_name : String = "down"
 var do_behaviour: bool = true
 
 @export var npc_resource : NPCResource : set = SetNPCResource
-@export var dialogue_script : DialogicTimeline = null
+@export var dialogue_script : DialogueResource = null
 @export_enum("up", "left", "right", "down", "None") var fixed_position : String = "None"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -21,7 +21,7 @@ var do_behaviour: bool = true
 @export var cs_pos_3 : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	Dialogic.signal_event.connect(_on_dialogic_signal)
+	PlayerManager.cutscene_signal.connect(_on_cutscene_signal)
 	SetupNPC()
 	if Engine.is_editor_hint():
 		return
@@ -67,7 +67,7 @@ func SetNPCResource(_npc:NPCResource) -> void:
 	npc_resource = _npc
 	SetupNPC()
 
-func _on_dialogic_signal(command:String):
+func _on_cutscene_signal(command:String):
 	if PlayerStats.player_context != "Cutscene":
 		return
 	if command == "santa_turnleft":
