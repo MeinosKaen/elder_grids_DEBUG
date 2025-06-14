@@ -128,12 +128,16 @@ func _on_cutscene_signal(command:String):
 	if PlayerStats.player_context != "Cutscene":
 		return
 	if command == "mc_turnleft":
+		StateMachine.ChangeState(idle_state)
 		animation_player.play("idle_left")
 	if command == "mc_turnup":
+		StateMachine.ChangeState(idle_state)
 		animation_player.play("idle_up")
 	if command == "mc_turnright":
+		StateMachine.ChangeState(idle_state)
 		animation_player.play("idle_right")
 	if command == "mc_turndown":
+		StateMachine.ChangeState(idle_state)
 		animation_player.play("idle_down")
 	if command == "mc_move1":
 		PlayerStats.player_context = "CS_Sensei_Move"

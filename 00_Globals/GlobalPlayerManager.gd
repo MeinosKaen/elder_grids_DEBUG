@@ -54,10 +54,6 @@ func dialogue_finished():
 func cutscene_walk(walker,target):
 	var direction = walker.global_position.direction_to(target)
 	walker.target_position = target
-	walker.direction = walker.global_position.direction_to(target)
-	walker.velocity = walker.walk_state.move_speed * direction
+	walker.direction = direction
 	walker.StateMachine.ChangeState(walker.walk_state)
-	walker.SetDirection()
-	print("Let's update the animation.")
-	walker.UpdatedAnimation("walk")
 	pass
